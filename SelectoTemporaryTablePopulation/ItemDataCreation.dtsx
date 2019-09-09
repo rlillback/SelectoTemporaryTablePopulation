@@ -1,0 +1,571 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/6/2019 11:01:23 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="N01A-DWSQLPD"
+  DTS:CreatorName="KINETICONET\rlillbac"
+  DTS:DTSID="{8D2CE181-0BD1-49C1-9183-487F17BD27E6}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1301.433"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{DE036E5D-8FA3-41B4-90BE-959CE5343C6B}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[JDE]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{51E344C4-14D0-474E-9026-D5434AE21416}"
+      DTS:ObjectName="JDE">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=N0E9SQL01;Initial Catalog=JDE_DEVELOPMENT;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SelectoJDE]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{AB3353F0-1B9F-4811-87EE-AFE9C2C5B4DF}"
+      DTS:ObjectName="SelectoJDE">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=N01A-DWSQLPD;Initial Catalog=SelectoJDE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Create Item Conflicts Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{FA978306-6BCE-46AB-8A3B-FE283FA0F419}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create Item Conflicts Table"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{AB3353F0-1B9F-4811-87EE-AFE9C2C5B4DF}"
+          SQLTask:SqlStatementSource="exec [dbo].[usp_ItemConflicts]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Populate Conflicting Items"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{27177EE0-CA87-4545-AACE-E63892107953}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Populate Conflicting Items"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{AB3353F0-1B9F-4811-87EE-AFE9C2C5B4DF}"
+          SQLTask:SqlStatementSource="exec [dbo].[usp_F4101AddNew]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Populate Item Branch"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{E83EF66E-FAD0-44D6-A0F0-903DFE202418}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Populate Item Branch"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{AB3353F0-1B9F-4811-87EE-AFE9C2C5B4DF}"
+          SQLTask:SqlStatementSource="exec dbo.usp_F4102Add" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Populate Item Costs"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{3BD2F167-3DF4-4735-B518-316C3127E08E}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Populate Item Costs"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{AB3353F0-1B9F-4811-87EE-AFE9C2C5B4DF}"
+          SQLTask:SqlStatementSource="exec dbo.usp_F4105Add" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Populate Item Location"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{3FA1CE36-2912-4FF9-AB97-F1D253F2EF2E}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Populate Item Location"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{AB3353F0-1B9F-4811-87EE-AFE9C2C5B4DF}"
+          SQLTask:SqlStatementSource="exec dbo.usp_F41021Add" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Populate Item Prices"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{B103D47C-CEAF-4B22-A6CD-37161347870B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Populate Item Prices"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{AB3353F0-1B9F-4811-87EE-AFE9C2C5B4DF}"
+          SQLTask:SqlStatementSource="exec dbo.usp_F4106Add" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Populate New Items"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{623BA91D-F210-461C-BB69-ADDC4F3F2476}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Populate New Items"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{AB3353F0-1B9F-4811-87EE-AFE9C2C5B4DF}"
+          SQLTask:SqlStatementSource="exec [dbo].[usp_F4101AddNew]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Populate the required UDCs"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{F867A3C9-12F6-424A-A5A9-666716D43E22}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Populate the required UDCs">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Populate the required UDCs\PRP1"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{61FA9074-DAC4-485B-87A0-5F747FCBF546}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="PRP1"
+          DTS:ThreadHint="4">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{51E344C4-14D0-474E-9026-D5434AE21416}"
+              SQLTask:SqlStatementSource="-----------------------------------------------------------------------------------------&#xA;--&#xA;-- Populate UDC 41/P1 (IMPRP1 and IBPRP1) with all of the Product Stages from Selecto&#xA;--&#xA;--&#xA;-- History:&#xA;-- 28-Aug-2019 R.Lillback Created Initial Version&#xA;--&#xA;-----------------------------------------------------------------------------------------&#xA;&#xA;--  Optional restore from production:  &#xA;--  truncate table testctl.F0005; insert into testctl.F0005 select * from JDE_PRODUCTION.prodctl.F0005;&#xA;&#xA;-- Set up the audit trail&#xA;declare @user nvarchar(10) = N'RLILLBACK';&#xA;declare @pid nvarchar(10) = N'SQLLD';&#xA;declare @jobn nvarchar(10) = N'SQLLD';&#xA;declare @jToday numeric(18,0)= dbo.fn_DateTimeToJulian(GETDATE()); -- Julian Date Today&#xA;declare @tNow float = CONVERT (&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   float,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   datepart(hh,getdate())*10000 + &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   datepart(mi, getdate())*100 +&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   datepart(ss, getdate())&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   ); -- Time now as held by JDE&#xA;&#xA;delete from testctl.F0005 where DRSY = N'41' and DRRT = N'P1' and RIGHT(LTRIM(RTRIM(DRDL01)),4) = N'-SEL'&#xA;&#xA;insert into testctl.F0005&#xA;select&#xA;&#x9;N'41' as DRSY,&#xA;&#x9;N'P1' as DRRT,&#xA;&#x9;DRKY = N'       0' + cast(ROW_NUMBER() over (order by UDF_PRODUCT_CATEGORY) as nchar(1)) + N'S',&#xA;&#x9;DRDL01 = LEFT(RTRIM(UDF_PRODUCT_CATEGORY), 26) + N'-SEL',&#xA;&#x9;DRDL02 = LEFT(RTRIM(UDF_PRODUCT_CATEGORY),30),&#xA;&#x9;N'' as DRSPHD,&#xA;&#x9;N'' as DRUDCO,&#xA;&#x9;N'N' as DRHRDC,&#xA;&#x9;@user as DRUSER,&#xA;&#x9;@pid as DRPID,&#xA;&#x9;@jToday as DRUPMJ,&#xA;&#x9;@jobn as DRJOBN,&#xA;&#x9;@tNow as DRUPMT&#xA;from [N01A-DWSQLPD].SelectoJDE.dbo.ods_IM_UDT_PRODUCT_CATEGORY as new" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Populate the required UDCs\PRP5"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{D0E6F843-224B-40A2-ABB9-11C5D0E1E525}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="PRP5"
+          DTS:ThreadHint="5">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{51E344C4-14D0-474E-9026-D5434AE21416}"
+              SQLTask:SqlStatementSource="-----------------------------------------------------------------------------------------&#xA;--&#xA;-- Populate UDC 41/P5 (IMPRP5 and IBPRP5) with all of the Product Stages from Selecto&#xA;--&#xA;--&#xA;-- History:&#xA;-- 28-Aug-2019 R.Lillback Created Initial Version&#xA;--&#xA;-----------------------------------------------------------------------------------------&#xA;&#xA;--  Optional restore from production:  &#xA;--  truncate table testctl.F0005; insert into testctl.F0005 select * from JDE_PRODUCTION.prodctl.F0005;&#xA;&#xA;-- Set up the audit trail&#xA;declare @user nvarchar(10) = N'RLILLBACK';&#xA;declare @pid nvarchar(10) = N'SQLLD';&#xA;declare @jobn nvarchar(10) = N'SQLLD';&#xA;declare @jToday numeric(18,0)= dbo.fn_DateTimeToJulian(GETDATE()); -- Julian Date Today&#xA;declare @tNow float = CONVERT (&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   float,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   datepart(hh,getdate())*10000 + &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   datepart(mi, getdate())*100 +&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   datepart(ss, getdate())&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   ); -- Time now as held by JDE&#xA;&#xA;delete from testctl.F0005 where DRSY = N'41' and DRRT = N'P5' and RIGHT(LTRIM(RTRIM(DRDL01)),4) = N'-SEL'&#xA;&#xA;insert into testctl.F0005&#xA;select&#xA;&#x9;N'41' as DRSY,&#xA;&#x9;N'P5' as DRRT,&#xA;&#x9;DRKY = N'       0' + cast(ROW_NUMBER() over (order by UDF_SERIES) as nchar(1)) + N'S',&#xA;&#x9;DRDL01 = LEFT(RTRIM(UDF_SERIES), 26) + N'-SEL',&#xA;&#x9;DRDL02 = LEFT(RTRIM(UDF_SERIES),30),&#xA;&#x9;N'' as DRSPHD,&#xA;&#x9;N'' as DRUDCO,&#xA;&#x9;N'N' as DRHRDC,&#xA;&#x9;@user as DRUSER,&#xA;&#x9;@pid as DRPID,&#xA;&#x9;@jToday as DRUPMJ,&#xA;&#x9;@jobn as DRJOBN,&#xA;&#x9;@tNow as DRUPMT&#xA;from [N01A-DWSQLPD].SelectoJDE.dbo.ods_IM_UDT_SERIES as new" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Populate the required UDCs\SRP1"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{F0DBE4A3-9869-4B04-8066-347BF4A286B9}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SRP1"
+          DTS:ThreadHint="6">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{51E344C4-14D0-474E-9026-D5434AE21416}"
+              SQLTask:SqlStatementSource="-----------------------------------------------------------------------------------------&#xA;--&#xA;-- Populate UDC 41/S1 (IMSRP1 and IBSRP1) with all of the Product Lines from Selecto&#xA;--&#xA;-- NOTE: THIS SHOULD POPULATE 21 ROWS IF NONE OF THE RECORDS EXIST ALREADY.&#xA;--&#xA;-- History:&#xA;-- 27-Aug-2019 R.Lillback Created Initial Version&#xA;-- 28-Aug-2019 R.Lillback Added population of DR02 for future joins from original table&#xA;--&#xA;-----------------------------------------------------------------------------------------&#xA;&#xA;--  Optional restore from production:  &#xA;--  truncate table testctl.F0005; insert into testctl.F0005 select * from JDE_PRODUCTION.prodctl.F0005;&#xA;&#xA;-- Here are the optional records to delete&#xA;-- select * from testctl.F0005 where (DRSY = N'41' and DRRT = N'S1') and (LTRIM(RTRIM(DRKY)) not in (select distinct IMSRP1 from testdta.F4101) and DRUSER not in (N'TERILLIUM', N'KZABROSKY'))&#xA;&#xA;-- Optionally delete unused records&#xA;-- delete from testctl.F0005 where (DRSY = N'41' and DRRT = N'S1' and LTRIM(RTRIM(DRKY)) not in (select distinct IMSRP1 from testdta.F4101) and DRUSER not in (N'TERILLIUM', N'KZABROSKY'))&#xA;&#xA;-- Delete records by date&#xA;-- delete from testctl.F0005 where DRSY = N'41' and DRRT = N'S1' and DRUPMJ = 119240&#xA;&#xA;-- Set up the audit trail&#xA;declare @user nvarchar(10) = N'RLILLBACK';&#xA;declare @pid nvarchar(10) = N'SQLLD';&#xA;declare @jobn nvarchar(10) = N'SQLLD';&#xA;declare @jToday numeric(18,0)= dbo.fn_DateTimeToJulian(GETDATE()); -- Julian Date Today&#xA;declare @tNow float = CONVERT (&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   float,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   datepart(hh,getdate())*10000 + &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   datepart(mi, getdate())*100 +&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   datepart(ss, getdate())&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   ); -- Time now as held by JDE&#xA;&#xA;insert into testctl.F0005&#xA;select&#xA;&#x9;N'41' as DRSY,&#xA;&#x9;N'S1' as DRRT,&#xA;&#x9;DRKY = N'       ' + RIGHT(ProductLine, 3),&#xA;&#x9;DRDL01 = LEFT(RTRIM(ProductLineDesc) + N' - SEL',30),&#xA;&#x9;DRDL02 = LEFT(RTRIM(ProductLineDesc),30),&#xA;&#x9;N'' as DRSPHD,&#xA;&#x9;N'' as DRUDCO,&#xA;&#x9;N'N' as DRHRDC,&#xA;&#x9;@user as DRUSER,&#xA;&#x9;@pid as DRPID,&#xA;&#x9;@jToday as DRUPMJ,&#xA;&#x9;@jobn as DRJOBN,&#xA;&#x9;@tNow as DRUPMT&#xA;from [N01A-DWSQLPD].SelectoJDE.dbo.ods_IM_ProductLine as new&#xA;&#x9; left join TESTCTL.F0005 as jde on DRSY = N'41' and DRRT = N'S1' and DRKY =  N'       ' + RIGHT(ProductLine, 3)&#xA;where&#xA;&#x9;jde.DRKY is null -- Don't insert records already in the system" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Populate the required UDCs\SRP2"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{0930CF7C-4677-4109-AE96-F9ECEDFBD5D4}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SRP2"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{51E344C4-14D0-474E-9026-D5434AE21416}"
+              SQLTask:SqlStatementSource="-----------------------------------------------------------------------------------------&#xA;--&#xA;-- Populate UDC 41/S2 (IMSRP2 and IBSRP2) with all of the Brands from Selecto&#xA;--&#xA;--&#xA;-- History:&#xA;-- 28-Aug-2019 R.Lillback Created Initial Version&#xA;--&#xA;-----------------------------------------------------------------------------------------&#xA;&#xA;--  Optional restore from production:  &#xA;--  truncate table testctl.F0005; insert into testctl.F0005 select * from JDE_PRODUCTION.prodctl.F0005;&#xA;&#xA;-- Here are teh optional records to delete&#xA;-- select * from testctl.F0005 where (DRSY = N'41' and DRRT = N'S1') and (LTRIM(RTRIM(DRKY)) not in (select distinct IMSRP1 from testdta.F4101) and DRUSER not in (N'TERILLIUM', N'KZABROSKY'))&#xA;&#xA;-- Optionally delete unused records&#xA;-- delete from testctl.F0005 where (DRSY = N'41' and DRRT = N'S1' and LTRIM(RTRIM(DRKY)) not in (select distinct IMSRP1 from testdta.F4101) and DRUSER not in (N'TERILLIUM', N'KZABROSKY'))&#xA;&#xA;-- Set up the audit trail&#xA;declare @user nvarchar(10) = N'RLILLBACK';&#xA;declare @pid nvarchar(10) = N'SQLLD';&#xA;declare @jobn nvarchar(10) = N'SQLLD';&#xA;declare @jToday numeric(18,0)= dbo.fn_DateTimeToJulian(GETDATE()); -- Julian Date Today&#xA;declare @tNow float = CONVERT (&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   float,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   datepart(hh,getdate())*10000 + &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   datepart(mi, getdate())*100 +&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   datepart(ss, getdate())&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   ); -- Time now as held by JDE&#xA;&#xA;delete from testctl.F0005 where DRSY = N'41' and DRRT = N'S2' and RIGHT(LTRIM(RTRIM(DRDL01)),4) = N'-SEL'&#xA;&#xA;insert into testctl.F0005&#xA;select&#xA;&#x9;N'41' as DRSY,&#xA;&#x9;N'S2' as DRRT,&#xA;&#x9;DRKY = N'       0' + cast(ROW_NUMBER() over (order by UDF_BRAND) as nchar(1)) + N'S',&#xA;&#x9;DRDL01 = LEFT(RTRIM(UDF_BRAND), 26) + N'-SEL',&#xA;&#x9;DRDL02 = LEFT(RTRIM(UDF_BRAND),30),&#xA;&#x9;N'' as DRSPHD,&#xA;&#x9;N'' as DRUDCO,&#xA;&#x9;N'N' as DRHRDC,&#xA;&#x9;@user as DRUSER,&#xA;&#x9;@pid as DRPID,&#xA;&#x9;@jToday as DRUPMJ,&#xA;&#x9;@jobn as DRJOBN,&#xA;&#x9;@tNow as DRUPMT&#xA;from [N01A-DWSQLPD].SelectoJDE.dbo.ods_IM_UDT_Brand as new" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Populate the required UDCs\SRP3"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{B2FB2287-A95C-4704-AFBB-F7F096C2C0C7}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SRP3"
+          DTS:ThreadHint="3">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{51E344C4-14D0-474E-9026-D5434AE21416}"
+              SQLTask:SqlStatementSource="-----------------------------------------------------------------------------------------&#xA;--&#xA;-- Populate UDC 41/S3 (IMSRP3 and IBSRP3) with all of the Cartridge Technologies from Selecto&#xA;--&#xA;--&#xA;-- History:&#xA;-- 28-Aug-2019 R.Lillback Created Initial Version&#xA;--&#xA;-----------------------------------------------------------------------------------------&#xA;&#xA;--  Optional restore from production:  &#xA;--  truncate table testctl.F0005; insert into testctl.F0005 select * from JDE_PRODUCTION.prodctl.F0005;&#xA;&#xA;-- Here are teh optional records to delete&#xA;-- select * from testctl.F0005 where (DRSY = N'41' and DRRT = N'S1') and (LTRIM(RTRIM(DRKY)) not in (select distinct IMSRP1 from testdta.F4101) and DRUSER not in (N'TERILLIUM', N'KZABROSKY'))&#xA;&#xA;-- Optionally delete unused records&#xA;-- delete from testctl.F0005 where (DRSY = N'41' and DRRT = N'S1' and LTRIM(RTRIM(DRKY)) not in (select distinct IMSRP1 from testdta.F4101) and DRUSER not in (N'TERILLIUM', N'KZABROSKY'))&#xA;&#xA;delete from testctl.F0005 where DRSY = N'41' and DRRT = N'S3' and RIGHT(LTRIM(RTRIM(DRDL01)),4) = N'-SEL'&#xA;&#xA;-- Set up the audit trail&#xA;declare @user nvarchar(10) = N'RLILLBACK';&#xA;declare @pid nvarchar(10) = N'SQLLD';&#xA;declare @jobn nvarchar(10) = N'SQLLD';&#xA;declare @jToday numeric(18,0)= dbo.fn_DateTimeToJulian(GETDATE()); -- Julian Date Today&#xA;declare @tNow float = CONVERT (&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   float,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   datepart(hh,getdate())*10000 + &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   datepart(mi, getdate())*100 +&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   datepart(ss, getdate())&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   ); -- Time now as held by JDE&#xA;&#xA;insert into testctl.F0005&#xA;select&#xA;&#x9;N'41' as DRSY,&#xA;&#x9;N'S3' as DRRT,&#xA;&#x9;DRKY = N'       ' + UDF_CODE + N'S',&#xA;&#x9;DRDL01 = LEFT(RTRIM(UDF_DESCRIPTION), 26) + N'-SEL',&#xA;&#x9;DRDL02 = LEFT(RTRIM(UDF_DESCRIPTION),30),&#xA;&#x9;N'' as DRSPHD,&#xA;&#x9;N'' as DRUDCO,&#xA;&#x9;N'N' as DRHRDC,&#xA;&#x9;@user as DRUSER,&#xA;&#x9;@pid as DRPID,&#xA;&#x9;@jToday as DRUPMJ,&#xA;&#x9;@jobn as DRJOBN,&#xA;&#x9;@tNow as DRUPMT&#xA;from [N01A-DWSQLPD].SelectoJDE.dbo.ods_IM_UDT_CARTRIDGE_TECHNOLOGY as new" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Populate the required UDCs\SRP5"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{F6514105-F919-4E19-9C09-AEAA61C9C7B3}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SRP5"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{51E344C4-14D0-474E-9026-D5434AE21416}"
+              SQLTask:SqlStatementSource="-----------------------------------------------------------------------------------------&#xA;--&#xA;-- Populate UDC 41/S5 (IMSRP5 and IBSRP5) with all of the Cartridge Sizes from Selecto&#xA;--&#xA;--&#xA;-- History:&#xA;-- 28-Aug-2019 R.Lillback Created Initial Version&#xA;--&#xA;-----------------------------------------------------------------------------------------&#xA;&#xA;--  Optional restore from production:  &#xA;--  truncate table testctl.F0005; insert into testctl.F0005 select * from JDE_PRODUCTION.prodctl.F0005;&#xA;&#xA;-- Set up the audit trail&#xA;declare @user nvarchar(10) = N'RLILLBACK';&#xA;declare @pid nvarchar(10) = N'SQLLD';&#xA;declare @jobn nvarchar(10) = N'SQLLD';&#xA;declare @jToday numeric(18,0)= dbo.fn_DateTimeToJulian(GETDATE()); -- Julian Date Today&#xA;declare @tNow float = CONVERT (&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   float,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   datepart(hh,getdate())*10000 + &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   datepart(mi, getdate())*100 +&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   datepart(ss, getdate())&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   ); -- Time now as held by JDE&#xA;&#xA;delete from testctl.F0005 where DRSY = N'41' and DRRT = N'S5' and RIGHT(LTRIM(RTRIM(DRDL01)),4) = N'-SEL'&#xA;&#xA;insert into testctl.F0005&#xA;select&#xA;&#x9;N'41' as DRSY,&#xA;&#x9;N'S5' as DRRT,&#xA;&#x9;DRKY = N'       0' + cast(ROW_NUMBER() over (order by UDF_CARTRIDGE_SIZE) as nchar(1)) + N'S',&#xA;&#x9;DRDL01 = LEFT(RTRIM(UDF_CARTRIDGE_SIZE), 26) + N'-SEL',&#xA;&#x9;DRDL02 = LEFT(RTRIM(UDF_CARTRIDGE_SIZE),30),&#xA;&#x9;N'' as DRSPHD,&#xA;&#x9;N'' as DRUDCO,&#xA;&#x9;N'N' as DRHRDC,&#xA;&#x9;@user as DRUSER,&#xA;&#x9;@pid as DRPID,&#xA;&#x9;@jToday as DRUPMJ,&#xA;&#x9;@jobn as DRJOBN,&#xA;&#x9;@tNow as DRUPMT&#xA;from [N01A-DWSQLPD].SelectoJDE.dbo.ods_IM_UDT_Cartridge_Size as new" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Populate the required UDCs\SRP6"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{52018FD5-37F2-489B-A1B7-3666E2F40671}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SRP6"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{51E344C4-14D0-474E-9026-D5434AE21416}"
+              SQLTask:SqlStatementSource="-----------------------------------------------------------------------------------------&#xA;--&#xA;-- Populate UDC 41/06 (IMSRP6 and IBSRP6) with all of the Product Stages from Selecto&#xA;--&#xA;--&#xA;-- History:&#xA;-- 28-Aug-2019 R.Lillback Created Initial Version&#xA;--&#xA;-----------------------------------------------------------------------------------------&#xA;&#xA;--  Optional restore from production:  &#xA;--  truncate table testctl.F0005; insert into testctl.F0005 select * from JDE_PRODUCTION.prodctl.F0005;&#xA;&#xA;delete from testctl.F0005 where DRSY = N'41' and DRRT = N'06' and RIGHT(RTRIM(LTRIM(DRDL01)),4) = N'-SEL'&#xA;&#xA;-- Set up the audit trail&#xA;declare @user nvarchar(10) = N'RLILLBACK';&#xA;declare @pid nvarchar(10) = N'SQLLD';&#xA;declare @jobn nvarchar(10) = N'SQLLD';&#xA;declare @jToday numeric(18,0)= dbo.fn_DateTimeToJulian(GETDATE()); -- Julian Date Today&#xA;declare @tNow float = CONVERT (&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   float,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   datepart(hh,getdate())*10000 + &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   datepart(mi, getdate())*100 +&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   datepart(ss, getdate())&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   ); -- Time now as held by JDE&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   &#xA;insert into testctl.F0005&#xA;select&#xA;&#x9;N'41' as DRSY,&#xA;&#x9;N'06' as DRRT,&#xA;&#x9;DRKY = N'       0' + cast(ROW_NUMBER() over (order by UDF_PRODUCT_STAGE) as nchar(1)) + N'S',&#xA;&#x9;DRDL01 = LEFT(RTRIM(UDF_PRODUCT_STAGE), 26) + N'-SEL',&#xA;&#x9;DRDL02 = LEFT(RTRIM(UDF_PRODUCT_STAGE),30),&#xA;&#x9;N'' as DRSPHD,&#xA;&#x9;N'' as DRUDCO,&#xA;&#x9;N'N' as DRHRDC,&#xA;&#x9;@user as DRUSER,&#xA;&#x9;@pid as DRPID,&#xA;&#x9;@jToday as DRUPMJ,&#xA;&#x9;@jobn as DRJOBN,&#xA;&#x9;@tNow as DRUPMT&#xA;from [N01A-DWSQLPD].SelectoJDE.dbo.ods_IM_UDT_PRODUCT_STAGE as new" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{7D41118E-9E69-4E92-8509-675D832FB6F5}"
+      DTS:From="Package\Populate the required UDCs"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Create Item Conflicts Table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{07DAA66F-B350-4894-941A-A180AA9F6B47}"
+      DTS:From="Package\Create Item Conflicts Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Populate New Items" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{F5C54E0A-AAF5-4B9B-AE88-DD05C3DDD616}"
+      DTS:From="Package\Populate New Items"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Populate Conflicting Items" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{FF0A6176-90BA-4DAC-AA2F-F0CDA5AA39C2}"
+      DTS:From="Package\Populate Conflicting Items"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Populate Item Branch" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{460B7D9F-878F-4BE1-9C6C-92F2BCAE2E68}"
+      DTS:From="Package\Populate Item Branch"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Populate Item Location" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{A3FF38B2-9DBA-43B1-808F-5566201E751B}"
+      DTS:From="Package\Populate Item Location"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Populate Item Costs" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{C5782D1C-0D3D-490F-85B4-4018294661D6}"
+      DTS:From="Package\Populate Item Costs"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Populate Item Prices" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="207,42"
+          Id="Package\Create Item Conflicts Table"
+          TopLeft="618,287" />
+        <NodeLayout
+          Size="202,42"
+          Id="Package\Populate Conflicting Items"
+          TopLeft="620,468" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Populate New Items"
+          TopLeft="630,375" />
+        <NodeLayout
+          Size="103,42"
+          Id="Package\Populate the required UDCs\PRP1"
+          TopLeft="713,30" />
+        <NodeLayout
+          Size="103,42"
+          Id="Package\Populate the required UDCs\PRP5"
+          TopLeft="604,29" />
+        <NodeLayout
+          Size="103,42"
+          Id="Package\Populate the required UDCs\SRP1"
+          TopLeft="497,29" />
+        <NodeLayout
+          Size="103,42"
+          Id="Package\Populate the required UDCs\SRP2"
+          TopLeft="387,30" />
+        <NodeLayout
+          Size="103,42"
+          Id="Package\Populate the required UDCs\SRP3"
+          TopLeft="276,30" />
+        <NodeLayout
+          Size="103,42"
+          Id="Package\Populate the required UDCs\SRP5"
+          TopLeft="166,29" />
+        <NodeLayout
+          Size="103,42"
+          Id="Package\Populate the required UDCs\SRP6"
+          TopLeft="44,30" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="885,133"
+          Size="885,176"
+          Id="Package\Populate the required UDCs"
+          TopLeft="284,53" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="724,229">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="719.25,329">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="719,417">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51"
+              Start="0,0"
+              End="0,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Populate Item Branch"
+          TopLeft="624,548" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="717.75,510">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Populate Item Location"
+          TopLeft="623,630" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="715.75,590">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40"
+              Start="0,0"
+              End="0,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Populate Item Costs"
+          TopLeft="633,717" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="718.5,672">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Populate Item Prices"
+          TopLeft="639,798" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="723.5,759">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39"
+              Start="0,0"
+              End="0,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
