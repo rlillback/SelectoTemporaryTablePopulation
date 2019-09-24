@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{DE036E5D-8FA3-41B4-90BE-959CE5343C6B}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{9C3413D6-186E-40AE-85EF-A86B80AC1A00}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -54,6 +54,22 @@
         <SQLTask:SqlTaskData
           SQLTask:Connection="{AB3353F0-1B9F-4811-87EE-AFE9C2C5B4DF}"
           SQLTask:SqlStatementSource="exec [dbo].[usp_ItemConflicts]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Populate BOM"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{C3D3674C-C174-4F50-B9E9-6531A84ED974}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Populate BOM"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{AB3353F0-1B9F-4811-87EE-AFE9C2C5B4DF}"
+          SQLTask:SqlStatementSource="exec dbo.usp_F3002Load" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -170,7 +186,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="PRP1"
-          DTS:ThreadHint="4">
+          DTS:ThreadHint="6">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -186,7 +202,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="PRP5"
-          DTS:ThreadHint="5">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -202,7 +218,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SRP1"
-          DTS:ThreadHint="6">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -218,7 +234,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SRP2"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -250,7 +266,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SRP5"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="4">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -266,7 +282,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SRP6"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="5">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -275,6 +291,22 @@
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tweak descriptions and search text"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{FC6C78BF-642D-41E5-91AE-EE4CCE2FF075}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tweak descriptions and search text"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{AB3353F0-1B9F-4811-87EE-AFE9C2C5B4DF}"
+          SQLTask:SqlStatementSource="update atmp.F4101 set IMDSC1 = UPPER(IMDSC1)&#xA;update atmp.F4101 set IMSRTX = REPLACE(IMSRTX,'&quot;&quot;','&quot;')&#xA;update atmp.F4101 set IMSRTX = UPPER(IMSRTX)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
@@ -297,7 +329,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{F5C54E0A-AAF5-4B9B-AE88-DD05C3DDD616}"
+      DTS:DTSID="{33F6B7EC-A68D-4DF5-9353-B7B1081AA3C7}"
       DTS:From="Package\Populate New Items"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -305,11 +337,11 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{FF0A6176-90BA-4DAC-AA2F-F0CDA5AA39C2}"
+      DTS:DTSID="{4097BB28-320D-4114-8485-40FDB9CD990D}"
       DTS:From="Package\Populate Conflicting Items"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
-      DTS:To="Package\Populate Item Branch" />
+      DTS:To="Package\Tweak descriptions and search text" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
@@ -334,6 +366,22 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 6"
       DTS:To="Package\Populate Item Prices" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{26919277-223D-4419-97BF-443A99307275}"
+      DTS:From="Package\Tweak descriptions and search text"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\Populate Item Branch" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{3ED79390-86AB-4CCC-8D2B-A9ADC06B819E}"
+      DTS:From="Package\Populate Item Prices"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 8"
+      DTS:To="Package\Populate BOM" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -354,11 +402,27 @@
         <NodeLayout
           Size="202,42"
           Id="Package\Populate Conflicting Items"
-          TopLeft="620,468" />
+          TopLeft="610,477" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Populate Item Branch"
+          TopLeft="624,548" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Populate Item Costs"
+          TopLeft="633,717" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Populate Item Location"
+          TopLeft="623,630" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Populate Item Prices"
+          TopLeft="639,798" />
         <NodeLayout
           Size="174,42"
           Id="Package\Populate New Items"
-          TopLeft="630,375" />
+          TopLeft="622,379" />
         <NodeLayout
           Size="103,42"
           Id="Package\Populate the required UDCs\PRP1"
@@ -394,6 +458,10 @@
           Size="885,176"
           Id="Package\Populate the required UDCs"
           TopLeft="284,53" />
+        <NodeLayout
+          Size="245,42"
+          Id="Package\Tweak descriptions and search text"
+          TopLeft="277,517" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="724,229">
@@ -418,18 +486,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="719.25,329">
+          TopLeft="721.5,329">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,46"
+              EndConnector="-12.5,50"
               Start="0,0"
-              End="0,38.5">
+              End="-12.5,42.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,38.5" />
+                    End="0,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21"
+                    Point2="0,25"
+                    Point3="-4,25" />
+                  <mssgle:LineSegment
+                    End="-8.5,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-8.5,25"
+                    Point2="-12.5,25"
+                    Point3="-12.5,29" />
+                  <mssgle:LineSegment
+                    End="-12.5,42.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -440,18 +520,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="719,417">
+          TopLeft="710,421">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,51"
+              EndConnector="0,56"
               Start="0,0"
-              End="0,43.5">
+              End="0,48.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.5" />
+                    End="0,48.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -460,24 +540,32 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="181,42"
-          Id="Package\Populate Item Branch"
-          TopLeft="624,548" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="717.75,510">
+          TopLeft="610,498">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38"
+              EndConnector="-88,34.3333333333334"
               Start="0,0"
-              End="0,30.5">
+              End="-80.5,34.3333333333334">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.5" />
+                    End="-46.8623853211009,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-46.8623853211009,0"
+                    Point2="-50.8623853211009,0"
+                    Point3="-50.8623853211009,4" />
+                  <mssgle:LineSegment
+                    End="-50.8623853211009,30.3333333333334" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-50.8623853211009,30.3333333333334"
+                    Point2="-50.8623853211009,34.3333333333334"
+                    Point3="-54.8623853211009,34.3333333333334" />
+                  <mssgle:LineSegment
+                    End="-80.5,34.3333333333334" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -486,10 +574,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="188,42"
-          Id="Package\Populate Item Location"
-          TopLeft="623,630" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
           TopLeft="715.75,590">
@@ -512,10 +596,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="174,42"
-          Id="Package\Populate Item Costs"
-          TopLeft="633,717" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
           TopLeft="718.5,672">
@@ -538,10 +618,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="176,42"
-          Id="Package\Populate Item Prices"
-          TopLeft="639,798" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
           TopLeft="723.5,759">
@@ -556,6 +632,66 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="522,543.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="102,25.3333333333334"
+              Start="0,0"
+              End="94.5,25.3333333333334">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="39.0458715596331,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="39.0458715596331,0"
+                    Point2="43.0458715596331,0"
+                    Point3="43.0458715596331,4" />
+                  <mssgle:LineSegment
+                    End="43.0458715596331,21.3333333333334" />
+                  <mssgle:CubicBezierSegment
+                    Point1="43.0458715596331,21.3333333333334"
+                    Point2="43.0458715596331,25.3333333333334"
+                    Point3="47.0458715596331,25.3333333333334" />
+                  <mssgle:LineSegment
+                    End="94.5,25.3333333333334" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Populate BOM"
+          TopLeft="648,880" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="723.75,840">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40"
+              Start="0,0"
+              End="0,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
