@@ -1,0 +1,2738 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/10/2020 1:34:14 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="N01A-DWSQLPD"
+  DTS:CreatorName="KINETICONET\rlillbac"
+  DTS:DTSID="{E5B34C0A-DC75-4137-9244-3B217695A484}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1301.433"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{AB945A0B-C843-4C45-A774-455B94E4FB16}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Inactive Vendor Flat File]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{1BB6584F-64D5-48A8-95BC-2657F321205A}"
+      DTS:ObjectName="Inactive Vendor Flat File">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="K:\KINETICO\Common\JuliaC\Ray\InactVndrs.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ALKY"
+              DTS:DTSID="{E7BD74BC-6454-47D3-BFB5-37BA0266AFB2}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[N01A-DWSQLPD.SelectoJDE]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{DC9CFE48-2945-423B-A186-7BD29B34A0DC}"
+      DTS:ObjectName="N01A-DWSQLPD.SelectoJDE">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=N01A-DWSQLPD;Initial Catalog=SelectoJDE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Payment Instrument Flat File]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{F473A8F9-6FF6-4A32-A956-12600AE9DF7F}"
+      DTS:ObjectName="Payment Instrument Flat File">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="K:\KINETICO\Common\JuliaC\Ray\VndrPayTypes.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ALKY"
+              DTS:DTSID="{33318CE5-E106-4031-A4A2-F222ABAC9ADF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PYIN"
+              DTS:DTSID="{0794E535-7507-4BD9-9FBC-71E6B6FF9B49}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Remit addr load]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{A8181785-EDD9-4EB2-9CF5-69B9BDDFFB36}"
+      DTS:ObjectName="Remit addr load">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="K:\KINETICO\Common\JuliaC\Ray\VndrRemits.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ALKY"
+              DTS:DTSID="{E77D864B-C5DA-44EC-9F77-339C31133E73}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="40"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ADD1"
+              DTS:DTSID="{42AB2724-B7F9-40EE-AC13-FFE289FDAFAE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="40"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ADD2"
+              DTS:DTSID="{B17A70FE-1F3B-4C3D-8763-E1E53067D0A6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="25"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CTY1"
+              DTS:DTSID="{934B8D99-B500-406A-9285-1ECE390391DA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ADDS"
+              DTS:DTSID="{A6805FE6-03EE-4381-9504-40084918B7D6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="12"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ADDZ"
+              DTS:DTSID="{2B1D77B9-82E5-4F2F-8A29-7B473C61E043}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CTR"
+              DTS:DTSID="{F60E7EEF-5A1D-4083-AC97-A3C1229A6FC0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="6"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PRE"
+              DTS:DTSID="{5A665DE9-207A-4361-8D9D-B6CD6AD1B1B5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PH1"
+              DTS:DTSID="{032AB1DA-0247-42B2-8DEF-6452608BAF06}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[V3 Vendor GL List]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{0796AE76-4262-4DDE-B7D8-6C78B4FEFFFE}"
+      DTS:ObjectName="V3 Vendor GL List">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="K:\KINETICO\Common\JuliaC\Ray\VndrDefaultGL.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ALKY"
+              DTS:DTSID="{2FB8D66B-CE9E-4F7E-B66B-1C0EFB3089B2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="12"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MCUP"
+              DTS:DTSID="{962B4F02-7FB7-46BF-8E52-B22D2198EBFB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="6"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OBAP"
+              DTS:DTSID="{223A7798-033E-4E69-9FA5-E57D626717C6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="8"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AIDP"
+              DTS:DTSID="{2A811B4B-7636-4F03-B2BE-F9CC6822EB29}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Populate Vendor Flat File with csv Data"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{4706DA74-D28B-4E7A-B6BA-D2693765D244}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Populate Vendor Flat File with csv Data">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{6D07E84E-0E8D-4723-9710-D89A20F3066B}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Populate GL for V3 vendors"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Load flat file"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="Load flat file"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Load flat file.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[V3 Vendor GL List]"
+                      connectionManagerRefId="Package.ConnectionManagers[V3 Vendor GL List]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Load flat file.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Load flat file.Outputs[Flat File Source Output].Columns[ALKY]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Load flat file.Outputs[Flat File Source Output].ExternalColumns[ALKY]"
+                          length="20"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Load flat file.Outputs[Flat File Source Output].Columns[ALKY]"
+                          name="ALKY"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Load flat file.Outputs[Flat File Source Output].Columns[MCUP]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Load flat file.Outputs[Flat File Source Output].ExternalColumns[MCUP]"
+                          length="12"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Load flat file.Outputs[Flat File Source Output].Columns[MCUP]"
+                          name="MCUP"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Load flat file.Outputs[Flat File Source Output].Columns[OBAP]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Load flat file.Outputs[Flat File Source Output].ExternalColumns[OBAP]"
+                          length="6"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Load flat file.Outputs[Flat File Source Output].Columns[OBAP]"
+                          name="OBAP"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Load flat file.Outputs[Flat File Source Output].Columns[AIDP]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Load flat file.Outputs[Flat File Source Output].ExternalColumns[AIDP]"
+                          length="8"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Load flat file.Outputs[Flat File Source Output].Columns[AIDP]"
+                          name="AIDP"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Load flat file.Outputs[Flat File Source Output].ExternalColumns[ALKY]"
+                          dataType="wstr"
+                          length="20"
+                          name="ALKY" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Load flat file.Outputs[Flat File Source Output].ExternalColumns[MCUP]"
+                          dataType="wstr"
+                          length="12"
+                          name="MCUP" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Load flat file.Outputs[Flat File Source Output].ExternalColumns[OBAP]"
+                          dataType="wstr"
+                          length="6"
+                          name="OBAP" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Load flat file.Outputs[Flat File Source Output].ExternalColumns[AIDP]"
+                          dataType="wstr"
+                          length="8"
+                          name="AIDP" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Load flat file.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Load flat file.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Load flat file.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Load flat file.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Load flat file.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Load flat file.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Load flat file.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="populate ods_VendorFlatFile"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[ods_VendorFlatFile]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[N01A-DWSQLPD.SelectoJDE]"
+                      connectionManagerRefId="Package.ConnectionManagers[N01A-DWSQLPD.SelectoJDE]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].Columns[ALKY]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="ALKY"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[ALKY]"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Load flat file.Outputs[Flat File Source Output].Columns[ALKY]" />
+                        <inputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].Columns[MCUP]"
+                          cachedDataType="wstr"
+                          cachedLength="12"
+                          cachedName="MCUP"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[MCUP]"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Load flat file.Outputs[Flat File Source Output].Columns[MCUP]" />
+                        <inputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].Columns[OBAP]"
+                          cachedDataType="wstr"
+                          cachedLength="6"
+                          cachedName="OBAP"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[OBAP]"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Load flat file.Outputs[Flat File Source Output].Columns[OBAP]" />
+                        <inputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].Columns[AIDP]"
+                          cachedDataType="wstr"
+                          cachedLength="8"
+                          cachedName="AIDP"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[AIDP]"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Load flat file.Outputs[Flat File Source Output].Columns[AIDP]" />
+                        <inputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].Columns[AT1]"
+                          cachedDataType="wstr"
+                          cachedLength="2"
+                          cachedName="AT1"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[AT1]"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Set AT1 to V3.Outputs[Derived Column Output].Columns[AT1]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[ALKY]"
+                          dataType="wstr"
+                          length="20"
+                          name="ALKY" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[AT1]"
+                          dataType="wstr"
+                          length="3"
+                          name="AT1" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[CM]"
+                          dataType="wstr"
+                          length="2"
+                          name="CM" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[MCUP]"
+                          dataType="wstr"
+                          length="12"
+                          name="MCUP" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[OBAP]"
+                          dataType="wstr"
+                          length="6"
+                          name="OBAP" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[AIDP]"
+                          dataType="wstr"
+                          length="8"
+                          name="AIDP" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[PYIN]"
+                          dataType="wstr"
+                          length="1"
+                          name="PYIN" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[ADD1]"
+                          dataType="wstr"
+                          length="40"
+                          name="ADD1" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[ADD2]"
+                          dataType="wstr"
+                          length="40"
+                          name="ADD2" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[CTY1]"
+                          dataType="wstr"
+                          length="25"
+                          name="CTY1" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[ADDS]"
+                          dataType="wstr"
+                          length="3"
+                          name="ADDS" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[ADDZ]"
+                          dataType="wstr"
+                          length="12"
+                          name="ADDZ" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[CTR]"
+                          dataType="wstr"
+                          length="3"
+                          name="CTR" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[PRE]"
+                          dataType="wstr"
+                          length="6"
+                          name="PRE" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[PH1]"
+                          dataType="wstr"
+                          length="20"
+                          name="PH1" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Set AT1 to V3"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Set AT1 to V3"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Set AT1 to V3.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Set AT1 to V3.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Set AT1 to V3.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Set AT1 to V3.Outputs[Derived Column Output].Columns[AT1]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="2"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Set AT1 to V3.Outputs[Derived Column Output].Columns[AT1]"
+                          name="AT1"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[TRIM]("V3")</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">TRIM("V3")</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Set AT1 to V3.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Set AT1 to V3.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Set AT1 to V3.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Set AT1 to V3.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Set AT1 to V3.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Set AT1 to V3.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors.Paths[Derived Column Output]"
+                  endId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Set AT1 to V3.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors.Paths[Flat File Source Output]"
+                  endId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Set AT1 to V3.Inputs[Derived Column Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Load flat file.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{7480799A-EA4A-420F-8774-483211CE7CC1}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Populate Inactive Vendors"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\get inactive vendors"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="get inactive vendors"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\get inactive vendors.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Inactive Vendor Flat File]"
+                      connectionManagerRefId="Package.ConnectionManagers[Inactive Vendor Flat File]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\get inactive vendors.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\get inactive vendors.Outputs[Flat File Source Output].Columns[ALKY]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\get inactive vendors.Outputs[Flat File Source Output].ExternalColumns[ALKY]"
+                          length="20"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\get inactive vendors.Outputs[Flat File Source Output].Columns[ALKY]"
+                          name="ALKY"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\get inactive vendors.Outputs[Flat File Source Output].ExternalColumns[ALKY]"
+                          dataType="wstr"
+                          length="20"
+                          name="ALKY" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\get inactive vendors.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\get inactive vendors.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\get inactive vendors.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\get inactive vendors.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\get inactive vendors.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\get inactive vendors.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\get inactive vendors.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\populate ods_VendorFlatFile with inactives"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="populate ods_VendorFlatFile with inactives"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[ods_VendorFlatFile]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\populate ods_VendorFlatFile with inactives.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[N01A-DWSQLPD.SelectoJDE]"
+                      connectionManagerRefId="Package.ConnectionManagers[N01A-DWSQLPD.SelectoJDE]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\populate ods_VendorFlatFile with inactives.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\populate ods_VendorFlatFile with inactives.Inputs[OLE DB Destination Input].Columns[ALKY]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="ALKY"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\populate ods_VendorFlatFile with inactives.Inputs[OLE DB Destination Input].ExternalColumns[ALKY]"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\get inactive vendors.Outputs[Flat File Source Output].Columns[ALKY]" />
+                        <inputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\populate ods_VendorFlatFile with inactives.Inputs[OLE DB Destination Input].Columns[AT1]"
+                          cachedDataType="wstr"
+                          cachedLength="1"
+                          cachedName="AT1"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\populate ods_VendorFlatFile with inactives.Inputs[OLE DB Destination Input].ExternalColumns[AT1]"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\set AT1 to I.Outputs[Derived Column Output].Columns[AT1]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\populate ods_VendorFlatFile with inactives.Inputs[OLE DB Destination Input].ExternalColumns[ALKY]"
+                          dataType="wstr"
+                          length="20"
+                          name="ALKY" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\populate ods_VendorFlatFile with inactives.Inputs[OLE DB Destination Input].ExternalColumns[AT1]"
+                          dataType="wstr"
+                          length="3"
+                          name="AT1" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\populate ods_VendorFlatFile with inactives.Inputs[OLE DB Destination Input].ExternalColumns[CM]"
+                          dataType="wstr"
+                          length="2"
+                          name="CM" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\populate ods_VendorFlatFile with inactives.Inputs[OLE DB Destination Input].ExternalColumns[MCUP]"
+                          dataType="wstr"
+                          length="12"
+                          name="MCUP" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\populate ods_VendorFlatFile with inactives.Inputs[OLE DB Destination Input].ExternalColumns[OBAP]"
+                          dataType="wstr"
+                          length="6"
+                          name="OBAP" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\populate ods_VendorFlatFile with inactives.Inputs[OLE DB Destination Input].ExternalColumns[AIDP]"
+                          dataType="wstr"
+                          length="8"
+                          name="AIDP" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\populate ods_VendorFlatFile with inactives.Inputs[OLE DB Destination Input].ExternalColumns[PYIN]"
+                          dataType="wstr"
+                          length="1"
+                          name="PYIN" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\populate ods_VendorFlatFile with inactives.Inputs[OLE DB Destination Input].ExternalColumns[ADD1]"
+                          dataType="wstr"
+                          length="40"
+                          name="ADD1" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\populate ods_VendorFlatFile with inactives.Inputs[OLE DB Destination Input].ExternalColumns[ADD2]"
+                          dataType="wstr"
+                          length="40"
+                          name="ADD2" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\populate ods_VendorFlatFile with inactives.Inputs[OLE DB Destination Input].ExternalColumns[CTY1]"
+                          dataType="wstr"
+                          length="25"
+                          name="CTY1" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\populate ods_VendorFlatFile with inactives.Inputs[OLE DB Destination Input].ExternalColumns[ADDS]"
+                          dataType="wstr"
+                          length="3"
+                          name="ADDS" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\populate ods_VendorFlatFile with inactives.Inputs[OLE DB Destination Input].ExternalColumns[ADDZ]"
+                          dataType="wstr"
+                          length="12"
+                          name="ADDZ" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\populate ods_VendorFlatFile with inactives.Inputs[OLE DB Destination Input].ExternalColumns[CTR]"
+                          dataType="wstr"
+                          length="3"
+                          name="CTR" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\populate ods_VendorFlatFile with inactives.Inputs[OLE DB Destination Input].ExternalColumns[PRE]"
+                          dataType="wstr"
+                          length="6"
+                          name="PRE" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\populate ods_VendorFlatFile with inactives.Inputs[OLE DB Destination Input].ExternalColumns[PH1]"
+                          dataType="wstr"
+                          length="20"
+                          name="PH1" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\populate ods_VendorFlatFile with inactives.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\populate ods_VendorFlatFile with inactives.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\populate ods_VendorFlatFile with inactives.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\populate ods_VendorFlatFile with inactives.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\populate ods_VendorFlatFile with inactives.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\populate ods_VendorFlatFile with inactives.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\set AT1 to I"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="set AT1 to I"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\set AT1 to I.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\set AT1 to I.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\set AT1 to I.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\set AT1 to I.Outputs[Derived Column Output].Columns[AT1]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="1"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\set AT1 to I.Outputs[Derived Column Output].Columns[AT1]"
+                          name="AT1"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[TRIM]("I")</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">TRIM("I")</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\set AT1 to I.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\set AT1 to I.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\set AT1 to I.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\set AT1 to I.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\set AT1 to I.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\set AT1 to I.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors.Paths[Derived Column Output]"
+                  endId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\populate ods_VendorFlatFile with inactives.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\set AT1 to I.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors.Paths[Flat File Source Output]"
+                  endId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\set AT1 to I.Inputs[Derived Column Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\get inactive vendors.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{4B402EB8-A89A-43C5-B9CC-FDAE6193C7E1}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Populate PYIN for V3 vendors"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Load flat file"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="Load flat file"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Load flat file.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Payment Instrument Flat File]"
+                      connectionManagerRefId="Package.ConnectionManagers[Payment Instrument Flat File]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Load flat file.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Load flat file.Outputs[Flat File Source Output].Columns[ALKY]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Load flat file.Outputs[Flat File Source Output].ExternalColumns[ALKY]"
+                          length="20"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Load flat file.Outputs[Flat File Source Output].Columns[ALKY]"
+                          name="ALKY"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Load flat file.Outputs[Flat File Source Output].Columns[PYIN]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Load flat file.Outputs[Flat File Source Output].ExternalColumns[PYIN]"
+                          length="1"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Load flat file.Outputs[Flat File Source Output].Columns[PYIN]"
+                          name="PYIN"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Load flat file.Outputs[Flat File Source Output].ExternalColumns[ALKY]"
+                          dataType="wstr"
+                          length="20"
+                          name="ALKY" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Load flat file.Outputs[Flat File Source Output].ExternalColumns[PYIN]"
+                          dataType="wstr"
+                          length="1"
+                          name="PYIN" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Load flat file.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Load flat file.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Load flat file.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Load flat file.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Load flat file.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Load flat file.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Load flat file.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Populate ods_VendorFlatFile"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Populate ods_VendorFlatFile"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[ods_VendorFlatFile]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Populate ods_VendorFlatFile.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[N01A-DWSQLPD.SelectoJDE]"
+                      connectionManagerRefId="Package.ConnectionManagers[N01A-DWSQLPD.SelectoJDE]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Populate ods_VendorFlatFile.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].Columns[ALKY]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="ALKY"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[ALKY]"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Load flat file.Outputs[Flat File Source Output].Columns[ALKY]" />
+                        <inputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].Columns[PYIN]"
+                          cachedDataType="wstr"
+                          cachedLength="1"
+                          cachedName="PYIN"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[PYIN]"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Load flat file.Outputs[Flat File Source Output].Columns[PYIN]" />
+                        <inputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].Columns[AT1]"
+                          cachedDataType="wstr"
+                          cachedLength="2"
+                          cachedName="AT1"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[AT1]"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Set AT1 to V3.Outputs[Derived Column Output].Columns[AT1]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[ALKY]"
+                          dataType="wstr"
+                          length="20"
+                          name="ALKY" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[AT1]"
+                          dataType="wstr"
+                          length="3"
+                          name="AT1" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[CM]"
+                          dataType="wstr"
+                          length="2"
+                          name="CM" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[MCUP]"
+                          dataType="wstr"
+                          length="12"
+                          name="MCUP" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[OBAP]"
+                          dataType="wstr"
+                          length="6"
+                          name="OBAP" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[AIDP]"
+                          dataType="wstr"
+                          length="8"
+                          name="AIDP" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[PYIN]"
+                          dataType="wstr"
+                          length="1"
+                          name="PYIN" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[ADD1]"
+                          dataType="wstr"
+                          length="40"
+                          name="ADD1" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[ADD2]"
+                          dataType="wstr"
+                          length="40"
+                          name="ADD2" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[CTY1]"
+                          dataType="wstr"
+                          length="25"
+                          name="CTY1" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[ADDS]"
+                          dataType="wstr"
+                          length="3"
+                          name="ADDS" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[ADDZ]"
+                          dataType="wstr"
+                          length="12"
+                          name="ADDZ" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[CTR]"
+                          dataType="wstr"
+                          length="3"
+                          name="CTR" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[PRE]"
+                          dataType="wstr"
+                          length="6"
+                          name="PRE" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Populate ods_VendorFlatFile.Inputs[OLE DB Destination Input].ExternalColumns[PH1]"
+                          dataType="wstr"
+                          length="20"
+                          name="PH1" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Populate ods_VendorFlatFile.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Populate ods_VendorFlatFile.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Populate ods_VendorFlatFile.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Populate ods_VendorFlatFile.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Populate ods_VendorFlatFile.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Populate ods_VendorFlatFile.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Set AT1 to V3"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Set AT1 to V3"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Set AT1 to V3.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Set AT1 to V3.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Set AT1 to V3.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Set AT1 to V3.Outputs[Derived Column Output].Columns[AT1]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="2"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Set AT1 to V3.Outputs[Derived Column Output].Columns[AT1]"
+                          name="AT1"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">"V3"</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">"V3"</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Set AT1 to V3.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Set AT1 to V3.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Set AT1 to V3.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Set AT1 to V3.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Set AT1 to V3.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Set AT1 to V3.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors.Paths[Derived Column Output]"
+                  endId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Populate ods_VendorFlatFile.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Set AT1 to V3.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors.Paths[Flat File Source Output]"
+                  endId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Set AT1 to V3.Inputs[Derived Column Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Load flat file.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{4D675A5B-1584-45ED-876A-0DA3BE833260}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Populate Remit R3 vendors"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="Flat File Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Remit addr load]"
+                      connectionManagerRefId="Package.ConnectionManagers[Remit addr load]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].Columns[ALKY]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ALKY]"
+                          length="20"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].Columns[ALKY]"
+                          name="ALKY"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].Columns[ADD1]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ADD1]"
+                          length="40"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].Columns[ADD1]"
+                          name="ADD1"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].Columns[ADD2]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ADD2]"
+                          length="40"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].Columns[ADD2]"
+                          name="ADD2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].Columns[CTY1]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CTY1]"
+                          length="25"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].Columns[CTY1]"
+                          name="CTY1"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].Columns[ADDS]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ADDS]"
+                          length="3"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].Columns[ADDS]"
+                          name="ADDS"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].Columns[ADDZ]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ADDZ]"
+                          length="12"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].Columns[ADDZ]"
+                          name="ADDZ"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].Columns[CTR]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CTR]"
+                          length="3"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].Columns[CTR]"
+                          name="CTR"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].Columns[PRE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PRE]"
+                          length="6"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].Columns[PRE]"
+                          name="PRE"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].Columns[PH1]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PH1]"
+                          length="20"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].Columns[PH1]"
+                          name="PH1"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ALKY]"
+                          dataType="wstr"
+                          length="20"
+                          name="ALKY" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ADD1]"
+                          dataType="wstr"
+                          length="40"
+                          name="ADD1" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ADD2]"
+                          dataType="wstr"
+                          length="40"
+                          name="ADD2" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CTY1]"
+                          dataType="wstr"
+                          length="25"
+                          name="CTY1" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ADDS]"
+                          dataType="wstr"
+                          length="3"
+                          name="ADDS" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ADDZ]"
+                          dataType="wstr"
+                          length="12"
+                          name="ADDZ" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CTR]"
+                          dataType="wstr"
+                          length="3"
+                          name="CTR" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PRE]"
+                          dataType="wstr"
+                          length="6"
+                          name="PRE" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PH1]"
+                          dataType="wstr"
+                          length="20"
+                          name="PH1" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[ods_VendorFlatFile]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[N01A-DWSQLPD.SelectoJDE]"
+                      connectionManagerRefId="Package.ConnectionManagers[N01A-DWSQLPD.SelectoJDE]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ALKY]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="ALKY"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ALKY]"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].Columns[ALKY]" />
+                        <inputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ADD1]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="ADD1"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ADD1]"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].Columns[ADD1]" />
+                        <inputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ADD2]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="ADD2"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ADD2]"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].Columns[ADD2]" />
+                        <inputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CTY1]"
+                          cachedDataType="wstr"
+                          cachedLength="25"
+                          cachedName="CTY1"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CTY1]"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].Columns[CTY1]" />
+                        <inputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ADDS]"
+                          cachedDataType="wstr"
+                          cachedLength="3"
+                          cachedName="ADDS"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ADDS]"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].Columns[ADDS]" />
+                        <inputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ADDZ]"
+                          cachedDataType="wstr"
+                          cachedLength="12"
+                          cachedName="ADDZ"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ADDZ]"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].Columns[ADDZ]" />
+                        <inputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CTR]"
+                          cachedDataType="wstr"
+                          cachedLength="3"
+                          cachedName="CTR"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CTR]"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].Columns[CTR]" />
+                        <inputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PRE]"
+                          cachedDataType="wstr"
+                          cachedLength="6"
+                          cachedName="PRE"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRE]"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].Columns[PRE]" />
+                        <inputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PH1]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="PH1"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PH1]"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output].Columns[PH1]" />
+                        <inputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AT1]"
+                          cachedDataType="wstr"
+                          cachedLength="2"
+                          cachedName="AT1"
+                          externalMetadataColumnId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AT1]"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Set AT1 to R3.Outputs[Derived Column Output].Columns[AT1]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ALKY]"
+                          dataType="wstr"
+                          length="20"
+                          name="ALKY" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AT1]"
+                          dataType="wstr"
+                          length="3"
+                          name="AT1" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CM]"
+                          dataType="wstr"
+                          length="2"
+                          name="CM" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MCUP]"
+                          dataType="wstr"
+                          length="12"
+                          name="MCUP" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OBAP]"
+                          dataType="wstr"
+                          length="6"
+                          name="OBAP" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AIDP]"
+                          dataType="wstr"
+                          length="8"
+                          name="AIDP" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PYIN]"
+                          dataType="wstr"
+                          length="1"
+                          name="PYIN" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ADD1]"
+                          dataType="wstr"
+                          length="40"
+                          name="ADD1" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ADD2]"
+                          dataType="wstr"
+                          length="40"
+                          name="ADD2" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CTY1]"
+                          dataType="wstr"
+                          length="25"
+                          name="CTY1" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ADDS]"
+                          dataType="wstr"
+                          length="3"
+                          name="ADDS" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ADDZ]"
+                          dataType="wstr"
+                          length="12"
+                          name="ADDZ" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CTR]"
+                          dataType="wstr"
+                          length="3"
+                          name="CTR" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRE]"
+                          dataType="wstr"
+                          length="6"
+                          name="PRE" />
+                        <externalMetadataColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PH1]"
+                          dataType="wstr"
+                          length="20"
+                          name="PH1" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Set AT1 to R3"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Set AT1 to R3"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Set AT1 to R3.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Set AT1 to R3.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Set AT1 to R3.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Set AT1 to R3.Outputs[Derived Column Output].Columns[AT1]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="2"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Set AT1 to R3.Outputs[Derived Column Output].Columns[AT1]"
+                          name="AT1"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[TRIM]("R3")</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">TRIM("R3")</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Set AT1 to R3.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Set AT1 to R3.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Set AT1 to R3.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Set AT1 to R3.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Set AT1 to R3.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Set AT1 to R3.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors.Paths[Derived Column Output]"
+                  endId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Set AT1 to R3.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors.Paths[Flat File Source Output]"
+                  endId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Set AT1 to R3.Inputs[Derived Column Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Populate Vendor Flat File with csv Data\truncate vendor flat file table"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{CA9EC2C1-BFF0-4665-917F-B7DF8F37F6D8}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="truncate vendor flat file table"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{DC9CFE48-2945-423B-A186-7BD29B34A0DC}"
+              SQLTask:SqlStatementSource="truncate table dbo.ods_VendorFlatFile" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Populate Vendor Flat File with csv Data.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{5A4FF3FA-24C9-425A-A9C2-328501B01896}"
+          DTS:From="Package\Populate Vendor Flat File with csv Data\truncate vendor flat file table"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Populate Vendor Flat File with csv Data.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{585332D1-2162-4824-98A9-40D1B7AE63D1}"
+          DTS:From="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Populate Vendor Flat File with csv Data.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{4BEEEB94-CD26-47EC-8373-09E647058764}"
+          DTS:From="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Populate Vendor Flat File with csv Data.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{43FE7078-E21A-4457-B774-C933476BD765}"
+          DTS:From="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="216,42"
+          Id="Package\Populate Vendor Flat File with csv Data\truncate vendor flat file table"
+          TopLeft="30,3" />
+        <NodeLayout
+          Size="202,42"
+          Id="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors"
+          TopLeft="34,70" />
+        <EdgeLayout
+          Id="Package\Populate Vendor Flat File with csv Data.PrecedenceConstraints[Constraint]"
+          TopLeft="136.5,45">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25"
+              Start="0,0"
+              End="0,17.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="208,42"
+          Id="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors"
+          TopLeft="37,143" />
+        <EdgeLayout
+          Id="Package\Populate Vendor Flat File with csv Data.PrecedenceConstraints[Constraint 1]"
+          TopLeft="138,112">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31"
+              Start="0,0"
+              End="0,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="219,42"
+          Id="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors"
+          TopLeft="37,216" />
+        <EdgeLayout
+          Id="Package\Populate Vendor Flat File with csv Data.PrecedenceConstraints[Constraint 2]"
+          TopLeft="143.75,185">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31"
+              Start="0,0"
+              End="0,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="207,42"
+          Id="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors"
+          TopLeft="45,293" />
+        <EdgeLayout
+          Id="Package\Populate Vendor Flat File with csv Data.PrecedenceConstraints[Constraint 3]"
+          TopLeft="147.5,258">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35"
+              Start="0,0"
+              End="0,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="434,390"
+          Size="434,433"
+          Id="Package\Populate Vendor Flat File with csv Data"
+          TopLeft="31,12" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\get inactive vendors"
+          TopLeft="457,68" />
+        <NodeLayout
+          Size="279,42"
+          Id="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\populate ods_VendorFlatFile with inactives"
+          TopLeft="474,251" />
+        <NodeLayout
+          Size="135,42"
+          Id="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\set AT1 to I"
+          TopLeft="472,162" />
+        <EdgeLayout
+          Id="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors.Paths[Flat File Source Output]"
+          TopLeft="541.75,110">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52"
+              Start="0,0"
+              End="0,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors.Paths[Derived Column Output]"
+          TopLeft="539.5,204">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="74,47"
+              Start="0,0"
+              End="74,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.5"
+                    Point2="0,23.5"
+                    Point3="4,23.5" />
+                  <mssgle:LineSegment
+                    End="70,23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="70,23.5"
+                    Point2="74,23.5"
+                    Point3="74,27.5" />
+                  <mssgle:LineSegment
+                    End="74,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\populate ods_VendorFlatFile with inactives">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="137,42"
+          Id="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Load flat file"
+          TopLeft="458,168" />
+        <NodeLayout
+          Size="144,42"
+          Id="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\Set AT1 to V3"
+          TopLeft="448,263" />
+        <EdgeLayout
+          Id="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors.Paths[Flat File Source Output]"
+          TopLeft="523.25,210">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53"
+              Start="0,0"
+              End="0,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="212,42"
+          Id="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile"
+          TopLeft="436,353" />
+        <EdgeLayout
+          Id="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors.Paths[Derived Column Output]"
+          TopLeft="520,305">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="22,48"
+              Start="0,0"
+              End="22,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20"
+                    Point2="0,24"
+                    Point3="4,24" />
+                  <mssgle:LineSegment
+                    End="18,24" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18,24"
+                    Point2="22,24"
+                    Point3="22,28" />
+                  <mssgle:LineSegment
+                    End="22,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors\populate ods_VendorFlatFile">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="137,42"
+          Id="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Load flat file"
+          TopLeft="401,87" />
+        <NodeLayout
+          Size="144,42"
+          Id="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Set AT1 to V3"
+          TopLeft="404,177" />
+        <EdgeLayout
+          Id="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors.Paths[Flat File Source Output]"
+          TopLeft="472.75,129">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="212,42"
+          Id="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Populate ods_VendorFlatFile"
+          TopLeft="369,262" />
+        <EdgeLayout
+          Id="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors.Paths[Derived Column Output]"
+          TopLeft="475.5,219">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate Vendor Flat File with csv Data\Populate PYIN for V3 vendors\Populate ods_VendorFlatFile">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Flat File Source"
+          TopLeft="378,150" />
+        <NodeLayout
+          Size="144,42"
+          Id="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\Set AT1 to R3"
+          TopLeft="385,225" />
+        <EdgeLayout
+          Id="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors.Paths[Flat File Source Output]"
+          TopLeft="455.25,192">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination"
+          TopLeft="391,320" />
+        <EdgeLayout
+          Id="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors.Paths[Derived Column Output]"
+          TopLeft="457,267">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="19.5,53"
+              Start="0,0"
+              End="19.5,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.5"
+                    Point2="0,26.5"
+                    Point3="4,26.5" />
+                  <mssgle:LineSegment
+                    End="15.5,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.5,26.5"
+                    Point2="19.5,26.5"
+                    Point3="19.5,30.5" />
+                  <mssgle:LineSegment
+                    End="19.5,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
