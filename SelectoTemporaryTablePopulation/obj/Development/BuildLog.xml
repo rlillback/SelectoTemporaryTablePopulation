@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>SelectoTemporaryTablePopulation</Name>
-    <LastWriteTime>2020-02-10T19:21:59.7688762Z</LastWriteTime>
+    <LastWriteTime>2020-02-11T18:50:38.2855445Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -13,7 +13,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>VendorData.dtsx</Name>
-      <LastWriteTime>2020-02-10T19:26:45.251117Z</LastWriteTime>
+      <LastWriteTime>2020-02-11T19:47:51.8623998Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
