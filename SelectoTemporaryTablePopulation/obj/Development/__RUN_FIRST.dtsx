@@ -1,0 +1,687 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/29/2020 12:51:34 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="N01A-DWSQLPD"
+  DTS:CreatorName="KINETICONET\rlillbac"
+  DTS:DTSID="{18AD0E64-81F6-4773-97B6-07D2C8ECD17A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1301.433"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{C58271EB-60A9-462A-8CFA-FD5A430BA0A8}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[N01A-DWSQLPD.SelectoJDE]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{CAAA8419-FBB6-4F30-88E2-15D06E5CDA96}"
+      DTS:ObjectName="N01A-DWSQLPD.SelectoJDE">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=N01A-DWSQLPD;Initial Catalog=SelectoJDE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[N0E9SQL01.JDE_DEVELOPMENT]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{49C10CA1-8EFA-4875-A4F8-2D7B8A10C699}"
+      DTS:ObjectName="N0E9SQL01.JDE_DEVELOPMENT">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=N0E9SQL01;Initial Catalog=JDE_DEVELOPMENT;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Backup DMAAIs"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{34128C3C-CA46-4427-BC4D-E36C627EA49D}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Backup DMAAIs"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Backup DMAAIs\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[atmp].[F4095_BACKUP]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Backup DMAAIs\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[N01A-DWSQLPD.SelectoJDE]"
+                  connectionManagerRefId="Package.ConnectionManagers[N01A-DWSQLPD.SelectoJDE]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Backup DMAAIs\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Backup DMAAIs\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MLANUM]"
+                      cachedDataType="r8"
+                      cachedName="MLANUM"
+                      externalMetadataColumnId="Package\Backup DMAAIs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MLANUM]"
+                      lineageId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].Columns[MLANUM]" />
+                    <inputColumn
+                      refId="Package\Backup DMAAIs\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MLCO]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="MLCO"
+                      externalMetadataColumnId="Package\Backup DMAAIs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MLCO]"
+                      lineageId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].Columns[MLCO]" />
+                    <inputColumn
+                      refId="Package\Backup DMAAIs\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MLDCTO]"
+                      cachedDataType="wstr"
+                      cachedLength="2"
+                      cachedName="MLDCTO"
+                      externalMetadataColumnId="Package\Backup DMAAIs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MLDCTO]"
+                      lineageId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].Columns[MLDCTO]" />
+                    <inputColumn
+                      refId="Package\Backup DMAAIs\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MLDCT]"
+                      cachedDataType="wstr"
+                      cachedLength="2"
+                      cachedName="MLDCT"
+                      externalMetadataColumnId="Package\Backup DMAAIs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MLDCT]"
+                      lineageId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].Columns[MLDCT]" />
+                    <inputColumn
+                      refId="Package\Backup DMAAIs\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MLGLPT]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="MLGLPT"
+                      externalMetadataColumnId="Package\Backup DMAAIs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MLGLPT]"
+                      lineageId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].Columns[MLGLPT]" />
+                    <inputColumn
+                      refId="Package\Backup DMAAIs\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MLCOST]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="MLCOST"
+                      externalMetadataColumnId="Package\Backup DMAAIs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MLCOST]"
+                      lineageId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].Columns[MLCOST]" />
+                    <inputColumn
+                      refId="Package\Backup DMAAIs\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MLMCU]"
+                      cachedDataType="wstr"
+                      cachedLength="12"
+                      cachedName="MLMCU"
+                      externalMetadataColumnId="Package\Backup DMAAIs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MLMCU]"
+                      lineageId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].Columns[MLMCU]" />
+                    <inputColumn
+                      refId="Package\Backup DMAAIs\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MLOBJ]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="MLOBJ"
+                      externalMetadataColumnId="Package\Backup DMAAIs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MLOBJ]"
+                      lineageId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].Columns[MLOBJ]" />
+                    <inputColumn
+                      refId="Package\Backup DMAAIs\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MLSUB]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="MLSUB"
+                      externalMetadataColumnId="Package\Backup DMAAIs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MLSUB]"
+                      lineageId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].Columns[MLSUB]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Backup DMAAIs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MLANUM]"
+                      dataType="r8"
+                      name="MLANUM" />
+                    <externalMetadataColumn
+                      refId="Package\Backup DMAAIs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MLCO]"
+                      dataType="wstr"
+                      length="5"
+                      name="MLCO" />
+                    <externalMetadataColumn
+                      refId="Package\Backup DMAAIs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MLDCTO]"
+                      dataType="wstr"
+                      length="2"
+                      name="MLDCTO" />
+                    <externalMetadataColumn
+                      refId="Package\Backup DMAAIs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MLDCT]"
+                      dataType="wstr"
+                      length="2"
+                      name="MLDCT" />
+                    <externalMetadataColumn
+                      refId="Package\Backup DMAAIs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MLGLPT]"
+                      dataType="wstr"
+                      length="4"
+                      name="MLGLPT" />
+                    <externalMetadataColumn
+                      refId="Package\Backup DMAAIs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MLCOST]"
+                      dataType="wstr"
+                      length="3"
+                      name="MLCOST" />
+                    <externalMetadataColumn
+                      refId="Package\Backup DMAAIs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MLMCU]"
+                      dataType="wstr"
+                      length="12"
+                      name="MLMCU" />
+                    <externalMetadataColumn
+                      refId="Package\Backup DMAAIs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MLOBJ]"
+                      dataType="wstr"
+                      length="6"
+                      name="MLOBJ" />
+                    <externalMetadataColumn
+                      refId="Package\Backup DMAAIs\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MLSUB]"
+                      dataType="wstr"
+                      length="8"
+                      name="MLSUB" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Backup DMAAIs\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Backup DMAAIs\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Backup DMAAIs\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Backup DMAAIs\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Backup DMAAIs\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Backup DMAAIs\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Backup DMAAIs\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[TESTDTA].[F4095]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Backup DMAAIs\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[N0E9SQL01.JDE_DEVELOPMENT]"
+                  connectionManagerRefId="Package.ConnectionManagers[N0E9SQL01.JDE_DEVELOPMENT]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].Columns[MLANUM]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MLANUM]"
+                      lineageId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].Columns[MLANUM]"
+                      name="MLANUM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].Columns[MLCO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MLCO]"
+                      length="5"
+                      lineageId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].Columns[MLCO]"
+                      name="MLCO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].Columns[MLDCTO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MLDCTO]"
+                      length="2"
+                      lineageId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].Columns[MLDCTO]"
+                      name="MLDCTO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].Columns[MLDCT]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MLDCT]"
+                      length="2"
+                      lineageId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].Columns[MLDCT]"
+                      name="MLDCT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].Columns[MLGLPT]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MLGLPT]"
+                      length="4"
+                      lineageId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].Columns[MLGLPT]"
+                      name="MLGLPT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].Columns[MLCOST]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MLCOST]"
+                      length="3"
+                      lineageId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].Columns[MLCOST]"
+                      name="MLCOST"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].Columns[MLMCU]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MLMCU]"
+                      length="12"
+                      lineageId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].Columns[MLMCU]"
+                      name="MLMCU"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].Columns[MLOBJ]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MLOBJ]"
+                      length="6"
+                      lineageId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].Columns[MLOBJ]"
+                      name="MLOBJ"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].Columns[MLSUB]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MLSUB]"
+                      length="8"
+                      lineageId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].Columns[MLSUB]"
+                      name="MLSUB"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MLANUM]"
+                      dataType="r8"
+                      name="MLANUM" />
+                    <externalMetadataColumn
+                      refId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MLCO]"
+                      dataType="wstr"
+                      length="5"
+                      name="MLCO" />
+                    <externalMetadataColumn
+                      refId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MLDCTO]"
+                      dataType="wstr"
+                      length="2"
+                      name="MLDCTO" />
+                    <externalMetadataColumn
+                      refId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MLDCT]"
+                      dataType="wstr"
+                      length="2"
+                      name="MLDCT" />
+                    <externalMetadataColumn
+                      refId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MLGLPT]"
+                      dataType="wstr"
+                      length="4"
+                      name="MLGLPT" />
+                    <externalMetadataColumn
+                      refId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MLCOST]"
+                      dataType="wstr"
+                      length="3"
+                      name="MLCOST" />
+                    <externalMetadataColumn
+                      refId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MLMCU]"
+                      dataType="wstr"
+                      length="12"
+                      name="MLMCU" />
+                    <externalMetadataColumn
+                      refId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MLOBJ]"
+                      dataType="wstr"
+                      length="6"
+                      name="MLOBJ" />
+                    <externalMetadataColumn
+                      refId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MLSUB]"
+                      dataType="wstr"
+                      length="8"
+                      name="MLSUB" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MLANUM]"
+                      dataType="r8"
+                      lineageId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MLANUM]"
+                      name="MLANUM" />
+                    <outputColumn
+                      refId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MLCO]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MLCO]"
+                      name="MLCO" />
+                    <outputColumn
+                      refId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MLDCTO]"
+                      dataType="wstr"
+                      length="2"
+                      lineageId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MLDCTO]"
+                      name="MLDCTO" />
+                    <outputColumn
+                      refId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MLDCT]"
+                      dataType="wstr"
+                      length="2"
+                      lineageId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MLDCT]"
+                      name="MLDCT" />
+                    <outputColumn
+                      refId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MLGLPT]"
+                      dataType="wstr"
+                      length="4"
+                      lineageId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MLGLPT]"
+                      name="MLGLPT" />
+                    <outputColumn
+                      refId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MLCOST]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MLCOST]"
+                      name="MLCOST" />
+                    <outputColumn
+                      refId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MLMCU]"
+                      dataType="wstr"
+                      length="12"
+                      lineageId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MLMCU]"
+                      name="MLMCU" />
+                    <outputColumn
+                      refId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MLOBJ]"
+                      dataType="wstr"
+                      length="6"
+                      lineageId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MLOBJ]"
+                      name="MLOBJ" />
+                    <outputColumn
+                      refId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MLSUB]"
+                      dataType="wstr"
+                      length="8"
+                      lineageId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MLSUB]"
+                      name="MLSUB" />
+                    <outputColumn
+                      refId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Backup DMAAIs.Paths[OLE DB Source Output]"
+              endId="Package\Backup DMAAIs\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Backup DMAAIs\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\truncate atmp DMAAIs"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{E0AF118A-286F-4F95-A018-CA86598FB304}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="truncate atmp DMAAIs"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{CAAA8419-FBB6-4F30-88E2-15D06E5CDA96}"
+          SQLTask:SqlStatementSource="truncate table [atmp].[F4095_BACKUP]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{FC66AC8B-9324-48A0-AE68-300CB0B33364}"
+      DTS:From="Package\truncate atmp DMAAIs"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Backup DMAAIs" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Backup DMAAIs"
+          TopLeft="571,166" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\truncate atmp DMAAIs"
+          TopLeft="556,80" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="648.25,122">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44"
+              Start="0,0"
+              End="0,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Backup DMAAIs">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Backup DMAAIs\OLE DB Destination"
+          TopLeft="507,182" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Backup DMAAIs\OLE DB Source"
+          TopLeft="512,72" />
+        <EdgeLayout
+          Id="Package\Backup DMAAIs.Paths[OLE DB Source Output]"
+          TopLeft="589.75,114">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,68"
+              Start="0,0"
+              End="0,60.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,60.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Backup DMAAIs\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Backup DMAAIs\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
