@@ -2,18 +2,18 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>SelectoTemporaryTablePopulation</Name>
-    <LastWriteTime>2020-03-29T18:55:42.4901832Z</LastWriteTime>
+    <LastWriteTime>2020-04-05T17:58:47.7054584Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>ItemDataCreation.dtsx</Name>
-      <LastWriteTime>2019-11-15T17:03:24.1569136Z</LastWriteTime>
+      <LastWriteTime>2020-04-05T21:00:07.214257Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>VendorAndCustomerData.dtsx</Name>
-      <LastWriteTime>2020-03-29T18:48:48.0116204Z</LastWriteTime>
+      <LastWriteTime>2020-04-01T20:34:43.2346967Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -22,8 +22,8 @@
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>__RUN_FIRST.dtsx</Name>
-      <LastWriteTime>2020-03-29T17:03:17.0592781Z</LastWriteTime>
+      <Name>__RUN_BEFORE_POPULATING_DV.dtsx</Name>
+      <LastWriteTime>2020-04-05T20:11:21.295831Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
