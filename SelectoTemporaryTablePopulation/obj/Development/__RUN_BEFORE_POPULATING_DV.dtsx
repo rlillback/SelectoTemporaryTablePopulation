@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="22"
-  DTS:VersionGUID="{0435F268-132F-41DB-BF2E-FA3210412431}">
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{9DC13611-C329-47D4-B029-441A38690984}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23669,6 +23669,1251 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
+          DTS:refId="Package\Backup JDE_DEVELOPMENT files\F46091"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{DA170076-070D-4084-9287-0A1AA0042110}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="F46091"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[atmp].[F46091_BACKUP]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[N01A-DWSQLPD.SelectoJDE]"
+                      connectionManagerRefId="Package.ConnectionManagers[N01A-DWSQLPD.SelectoJDE]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDMCU]"
+                          cachedDataType="wstr"
+                          cachedLength="12"
+                          cachedName="IDMCU"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDMCU]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDMCU]" />
+                        <inputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDEQTY]"
+                          cachedDataType="wstr"
+                          cachedLength="5"
+                          cachedName="IDEQTY"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDEQTY]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDEQTY]" />
+                        <inputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDGWID]"
+                          cachedDataType="r8"
+                          cachedName="IDGWID"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDGWID]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDGWID]" />
+                        <inputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDGDEP]"
+                          cachedDataType="r8"
+                          cachedName="IDGDEP"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDGDEP]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDGDEP]" />
+                        <inputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDGHET]"
+                          cachedDataType="r8"
+                          cachedName="IDGHET"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDGHET]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDGHET]" />
+                        <inputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDWIUM]"
+                          cachedDataType="wstr"
+                          cachedLength="2"
+                          cachedName="IDWIUM"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDWIUM]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDWIUM]" />
+                        <inputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDGCUB]"
+                          cachedDataType="r8"
+                          cachedName="IDGCUB"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDGCUB]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDGCUB]" />
+                        <inputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDVUMD]"
+                          cachedDataType="wstr"
+                          cachedLength="2"
+                          cachedName="IDVUMD"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDVUMD]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDVUMD]" />
+                        <inputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDGWEI]"
+                          cachedDataType="r8"
+                          cachedName="IDGWEI"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDGWEI]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDGWEI]" />
+                        <inputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDUWUM]"
+                          cachedDataType="wstr"
+                          cachedLength="2"
+                          cachedName="IDUWUM"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDUWUM]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDUWUM]" />
+                        <inputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDSHCT]"
+                          cachedDataType="wstr"
+                          cachedLength="1"
+                          cachedName="IDSHCT"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDSHCT]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDSHCT]" />
+                        <inputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDAVCT]"
+                          cachedDataType="wstr"
+                          cachedLength="1"
+                          cachedName="IDAVCT"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDAVCT]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDAVCT]" />
+                        <inputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDPRSH]"
+                          cachedDataType="r8"
+                          cachedName="IDPRSH"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDPRSH]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDPRSH]" />
+                        <inputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDCTPR]"
+                          cachedDataType="r8"
+                          cachedName="IDCTPR"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDCTPR]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDCTPR]" />
+                        <inputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDCTPM]"
+                          cachedDataType="r8"
+                          cachedName="IDCTPM"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDCTPM]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDCTPM]" />
+                        <inputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDMAXW]"
+                          cachedDataType="r8"
+                          cachedName="IDMAXW"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDMAXW]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDMAXW]" />
+                        <inputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDUSER]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="IDUSER"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDUSER]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDUSER]" />
+                        <inputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDUPMJ]"
+                          cachedDataType="numeric"
+                          cachedName="IDUPMJ"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDUPMJ]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDUPMJ]" />
+                        <inputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDTDAY]"
+                          cachedDataType="r8"
+                          cachedName="IDTDAY"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDTDAY]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDTDAY]" />
+                        <inputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDGRTH]"
+                          cachedDataType="r8"
+                          cachedName="IDGRTH"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDGRTH]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDGRTH]" />
+                        <inputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDUCCU]"
+                          cachedDataType="wstr"
+                          cachedLength="1"
+                          cachedName="IDUCCU"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDUCCU]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDUCCU]" />
+                        <inputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDUIUD]"
+                          cachedDataType="wstr"
+                          cachedLength="1"
+                          cachedName="IDUIUD"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDUIUD]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDUIUD]" />
+                        <inputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDITM]"
+                          cachedDataType="r8"
+                          cachedName="IDITM"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDITM]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDITM]" />
+                        <inputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDCNPFG]"
+                          cachedDataType="wstr"
+                          cachedLength="1"
+                          cachedName="IDCNPFG"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDCNPFG]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDCNPFG]" />
+                        <inputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDEXCN]"
+                          cachedDataType="wstr"
+                          cachedLength="1"
+                          cachedName="IDEXCN"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDEXCN]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDEXCN]" />
+                        <inputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDPKCD]"
+                          cachedDataType="wstr"
+                          cachedLength="5"
+                          cachedName="IDPKCD"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDPKCD]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDPKCD]" />
+                        <inputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDCSOC]"
+                          cachedDataType="wstr"
+                          cachedLength="1"
+                          cachedName="IDCSOC"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDCSOC]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDCSOC]" />
+                        <inputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDPKGRC]"
+                          cachedDataType="wstr"
+                          cachedLength="3"
+                          cachedName="IDPKGRC"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDPKGRC]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDPKGRC]" />
+                        <inputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDPKGTR]"
+                          cachedDataType="wstr"
+                          cachedLength="3"
+                          cachedName="IDPKGTR"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDPKGTR]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDPKGTR]" />
+                        <inputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDCTUOM]"
+                          cachedDataType="wstr"
+                          cachedLength="2"
+                          cachedName="IDCTUOM"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDCTUOM]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDCTUOM]" />
+                        <inputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDCPRGP1]"
+                          cachedDataType="wstr"
+                          cachedLength="6"
+                          cachedName="IDCPRGP1"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDCPRGP1]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDCPRGP1]" />
+                        <inputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDCPRGP2]"
+                          cachedDataType="wstr"
+                          cachedLength="6"
+                          cachedName="IDCPRGP2"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDCPRGP2]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDCPRGP2]" />
+                        <inputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDCPRGP3]"
+                          cachedDataType="wstr"
+                          cachedLength="6"
+                          cachedName="IDCPRGP3"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDCPRGP3]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDCPRGP3]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDMCU]"
+                          dataType="wstr"
+                          length="12"
+                          name="IDMCU" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDEQTY]"
+                          dataType="wstr"
+                          length="5"
+                          name="IDEQTY" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDGWID]"
+                          dataType="r8"
+                          name="IDGWID" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDGDEP]"
+                          dataType="r8"
+                          name="IDGDEP" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDGHET]"
+                          dataType="r8"
+                          name="IDGHET" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDWIUM]"
+                          dataType="wstr"
+                          length="2"
+                          name="IDWIUM" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDGCUB]"
+                          dataType="r8"
+                          name="IDGCUB" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDVUMD]"
+                          dataType="wstr"
+                          length="2"
+                          name="IDVUMD" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDGWEI]"
+                          dataType="r8"
+                          name="IDGWEI" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDUWUM]"
+                          dataType="wstr"
+                          length="2"
+                          name="IDUWUM" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDSHCT]"
+                          dataType="wstr"
+                          length="1"
+                          name="IDSHCT" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDAVCT]"
+                          dataType="wstr"
+                          length="1"
+                          name="IDAVCT" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDPRSH]"
+                          dataType="r8"
+                          name="IDPRSH" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDCTPR]"
+                          dataType="r8"
+                          name="IDCTPR" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDCTPM]"
+                          dataType="r8"
+                          name="IDCTPM" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDMAXW]"
+                          dataType="r8"
+                          name="IDMAXW" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDUSER]"
+                          dataType="wstr"
+                          length="10"
+                          name="IDUSER" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDUPMJ]"
+                          dataType="numeric"
+                          name="IDUPMJ"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDTDAY]"
+                          dataType="r8"
+                          name="IDTDAY" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDGRTH]"
+                          dataType="r8"
+                          name="IDGRTH" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDUCCU]"
+                          dataType="wstr"
+                          length="1"
+                          name="IDUCCU" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDUIUD]"
+                          dataType="wstr"
+                          length="1"
+                          name="IDUIUD" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDITM]"
+                          dataType="r8"
+                          name="IDITM" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDCNPFG]"
+                          dataType="wstr"
+                          length="1"
+                          name="IDCNPFG" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDEXCN]"
+                          dataType="wstr"
+                          length="1"
+                          name="IDEXCN" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDPKCD]"
+                          dataType="wstr"
+                          length="5"
+                          name="IDPKCD" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDCSOC]"
+                          dataType="wstr"
+                          length="1"
+                          name="IDCSOC" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDPKGRC]"
+                          dataType="wstr"
+                          length="3"
+                          name="IDPKGRC" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDPKGTR]"
+                          dataType="wstr"
+                          length="3"
+                          name="IDPKGTR" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDCTUOM]"
+                          dataType="wstr"
+                          length="2"
+                          name="IDCTUOM" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDCPRGP1]"
+                          dataType="wstr"
+                          length="6"
+                          name="IDCPRGP1" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDCPRGP2]"
+                          dataType="wstr"
+                          length="6"
+                          name="IDCPRGP2" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDCPRGP3]"
+                          dataType="wstr"
+                          length="6"
+                          name="IDCPRGP3" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[TESTDTA].[F46091]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[N0E9SQL01.JDE_DEVELOPMENT]"
+                      connectionManagerRefId="Package.ConnectionManagers[N0E9SQL01.JDE_DEVELOPMENT]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDMCU]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDMCU]"
+                          length="12"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDMCU]"
+                          name="IDMCU"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDEQTY]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDEQTY]"
+                          length="5"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDEQTY]"
+                          name="IDEQTY"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDGWID]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDGWID]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDGWID]"
+                          name="IDGWID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDGDEP]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDGDEP]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDGDEP]"
+                          name="IDGDEP"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDGHET]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDGHET]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDGHET]"
+                          name="IDGHET"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDWIUM]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDWIUM]"
+                          length="2"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDWIUM]"
+                          name="IDWIUM"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDGCUB]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDGCUB]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDGCUB]"
+                          name="IDGCUB"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDVUMD]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDVUMD]"
+                          length="2"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDVUMD]"
+                          name="IDVUMD"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDGWEI]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDGWEI]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDGWEI]"
+                          name="IDGWEI"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDUWUM]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDUWUM]"
+                          length="2"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDUWUM]"
+                          name="IDUWUM"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDSHCT]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDSHCT]"
+                          length="1"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDSHCT]"
+                          name="IDSHCT"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDAVCT]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDAVCT]"
+                          length="1"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDAVCT]"
+                          name="IDAVCT"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDPRSH]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDPRSH]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDPRSH]"
+                          name="IDPRSH"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDCTPR]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDCTPR]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDCTPR]"
+                          name="IDCTPR"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDCTPM]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDCTPM]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDCTPM]"
+                          name="IDCTPM"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDMAXW]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDMAXW]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDMAXW]"
+                          name="IDMAXW"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDUSER]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDUSER]"
+                          length="10"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDUSER]"
+                          name="IDUSER"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDUPMJ]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDUPMJ]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDUPMJ]"
+                          name="IDUPMJ"
+                          precision="18"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDTDAY]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDTDAY]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDTDAY]"
+                          name="IDTDAY"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDGRTH]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDGRTH]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDGRTH]"
+                          name="IDGRTH"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDUCCU]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDUCCU]"
+                          length="1"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDUCCU]"
+                          name="IDUCCU"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDUIUD]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDUIUD]"
+                          length="1"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDUIUD]"
+                          name="IDUIUD"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDITM]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDITM]"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDITM]"
+                          name="IDITM"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDCNPFG]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDCNPFG]"
+                          length="1"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDCNPFG]"
+                          name="IDCNPFG"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDEXCN]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDEXCN]"
+                          length="1"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDEXCN]"
+                          name="IDEXCN"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDPKCD]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDPKCD]"
+                          length="5"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDPKCD]"
+                          name="IDPKCD"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDCSOC]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDCSOC]"
+                          length="1"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDCSOC]"
+                          name="IDCSOC"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDPKGRC]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDPKGRC]"
+                          length="3"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDPKGRC]"
+                          name="IDPKGRC"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDPKGTR]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDPKGTR]"
+                          length="3"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDPKGTR]"
+                          name="IDPKGTR"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDCTUOM]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDCTUOM]"
+                          length="2"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDCTUOM]"
+                          name="IDCTUOM"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDCPRGP1]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDCPRGP1]"
+                          length="6"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDCPRGP1]"
+                          name="IDCPRGP1"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDCPRGP2]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDCPRGP2]"
+                          length="6"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDCPRGP2]"
+                          name="IDCPRGP2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDCPRGP3]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDCPRGP3]"
+                          length="6"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDCPRGP3]"
+                          name="IDCPRGP3"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDMCU]"
+                          dataType="wstr"
+                          length="12"
+                          name="IDMCU" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDEQTY]"
+                          dataType="wstr"
+                          length="5"
+                          name="IDEQTY" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDGWID]"
+                          dataType="r8"
+                          name="IDGWID" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDGDEP]"
+                          dataType="r8"
+                          name="IDGDEP" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDGHET]"
+                          dataType="r8"
+                          name="IDGHET" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDWIUM]"
+                          dataType="wstr"
+                          length="2"
+                          name="IDWIUM" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDGCUB]"
+                          dataType="r8"
+                          name="IDGCUB" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDVUMD]"
+                          dataType="wstr"
+                          length="2"
+                          name="IDVUMD" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDGWEI]"
+                          dataType="r8"
+                          name="IDGWEI" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDUWUM]"
+                          dataType="wstr"
+                          length="2"
+                          name="IDUWUM" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDSHCT]"
+                          dataType="wstr"
+                          length="1"
+                          name="IDSHCT" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDAVCT]"
+                          dataType="wstr"
+                          length="1"
+                          name="IDAVCT" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDPRSH]"
+                          dataType="r8"
+                          name="IDPRSH" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDCTPR]"
+                          dataType="r8"
+                          name="IDCTPR" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDCTPM]"
+                          dataType="r8"
+                          name="IDCTPM" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDMAXW]"
+                          dataType="r8"
+                          name="IDMAXW" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDUSER]"
+                          dataType="wstr"
+                          length="10"
+                          name="IDUSER" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDUPMJ]"
+                          dataType="numeric"
+                          name="IDUPMJ"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDTDAY]"
+                          dataType="r8"
+                          name="IDTDAY" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDGRTH]"
+                          dataType="r8"
+                          name="IDGRTH" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDUCCU]"
+                          dataType="wstr"
+                          length="1"
+                          name="IDUCCU" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDUIUD]"
+                          dataType="wstr"
+                          length="1"
+                          name="IDUIUD" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDITM]"
+                          dataType="r8"
+                          name="IDITM" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDCNPFG]"
+                          dataType="wstr"
+                          length="1"
+                          name="IDCNPFG" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDEXCN]"
+                          dataType="wstr"
+                          length="1"
+                          name="IDEXCN" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDPKCD]"
+                          dataType="wstr"
+                          length="5"
+                          name="IDPKCD" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDCSOC]"
+                          dataType="wstr"
+                          length="1"
+                          name="IDCSOC" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDPKGRC]"
+                          dataType="wstr"
+                          length="3"
+                          name="IDPKGRC" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDPKGTR]"
+                          dataType="wstr"
+                          length="3"
+                          name="IDPKGTR" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDCTUOM]"
+                          dataType="wstr"
+                          length="2"
+                          name="IDCTUOM" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDCPRGP1]"
+                          dataType="wstr"
+                          length="6"
+                          name="IDCPRGP1" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDCPRGP2]"
+                          dataType="wstr"
+                          length="6"
+                          name="IDCPRGP2" />
+                        <externalMetadataColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDCPRGP3]"
+                          dataType="wstr"
+                          length="6"
+                          name="IDCPRGP3" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDMCU]"
+                          dataType="wstr"
+                          length="12"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDMCU]"
+                          name="IDMCU" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDEQTY]"
+                          dataType="wstr"
+                          length="5"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDEQTY]"
+                          name="IDEQTY" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDGWID]"
+                          dataType="r8"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDGWID]"
+                          name="IDGWID" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDGDEP]"
+                          dataType="r8"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDGDEP]"
+                          name="IDGDEP" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDGHET]"
+                          dataType="r8"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDGHET]"
+                          name="IDGHET" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDWIUM]"
+                          dataType="wstr"
+                          length="2"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDWIUM]"
+                          name="IDWIUM" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDGCUB]"
+                          dataType="r8"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDGCUB]"
+                          name="IDGCUB" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDVUMD]"
+                          dataType="wstr"
+                          length="2"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDVUMD]"
+                          name="IDVUMD" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDGWEI]"
+                          dataType="r8"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDGWEI]"
+                          name="IDGWEI" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDUWUM]"
+                          dataType="wstr"
+                          length="2"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDUWUM]"
+                          name="IDUWUM" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDSHCT]"
+                          dataType="wstr"
+                          length="1"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDSHCT]"
+                          name="IDSHCT" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDAVCT]"
+                          dataType="wstr"
+                          length="1"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDAVCT]"
+                          name="IDAVCT" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDPRSH]"
+                          dataType="r8"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDPRSH]"
+                          name="IDPRSH" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDCTPR]"
+                          dataType="r8"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDCTPR]"
+                          name="IDCTPR" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDCTPM]"
+                          dataType="r8"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDCTPM]"
+                          name="IDCTPM" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDMAXW]"
+                          dataType="r8"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDMAXW]"
+                          name="IDMAXW" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDUSER]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDUSER]"
+                          name="IDUSER" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDUPMJ]"
+                          dataType="numeric"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDUPMJ]"
+                          name="IDUPMJ"
+                          precision="18" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDTDAY]"
+                          dataType="r8"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDTDAY]"
+                          name="IDTDAY" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDGRTH]"
+                          dataType="r8"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDGRTH]"
+                          name="IDGRTH" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDUCCU]"
+                          dataType="wstr"
+                          length="1"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDUCCU]"
+                          name="IDUCCU" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDUIUD]"
+                          dataType="wstr"
+                          length="1"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDUIUD]"
+                          name="IDUIUD" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDITM]"
+                          dataType="r8"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDITM]"
+                          name="IDITM" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDCNPFG]"
+                          dataType="wstr"
+                          length="1"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDCNPFG]"
+                          name="IDCNPFG" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDEXCN]"
+                          dataType="wstr"
+                          length="1"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDEXCN]"
+                          name="IDEXCN" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDPKCD]"
+                          dataType="wstr"
+                          length="5"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDPKCD]"
+                          name="IDPKCD" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDCSOC]"
+                          dataType="wstr"
+                          length="1"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDCSOC]"
+                          name="IDCSOC" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDPKGRC]"
+                          dataType="wstr"
+                          length="3"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDPKGRC]"
+                          name="IDPKGRC" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDPKGTR]"
+                          dataType="wstr"
+                          length="3"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDPKGTR]"
+                          name="IDPKGTR" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDCTUOM]"
+                          dataType="wstr"
+                          length="2"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDCTUOM]"
+                          name="IDCTUOM" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDCPRGP1]"
+                          dataType="wstr"
+                          length="6"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDCPRGP1]"
+                          name="IDCPRGP1" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDCPRGP2]"
+                          dataType="wstr"
+                          length="6"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDCPRGP2]"
+                          name="IDCPRGP2" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDCPRGP3]"
+                          dataType="wstr"
+                          length="6"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDCPRGP3]"
+                          name="IDCPRGP3" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Backup JDE_DEVELOPMENT files\F46091.Paths[OLE DB Source Output]"
+                  endId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\Backup JDE_DEVELOPMENT files\F49002"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
@@ -26940,7 +28185,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{CAAA8419-FBB6-4F30-88E2-15D06E5CDA96}"
-          SQLTask:SqlStatementSource="truncate table atmp.F0006_BACKUP&#xA;truncate table atmp.F0010_BACKUP&#xA;truncate table atmp.F0901_BACKUP&#xA;truncate table atmp.F4095_BACKUP&#xA;truncate table atmp.F4100_BACKUP&#xA;truncate table atmp.F49002_BACKUP&#xA;truncate table atmp.F4950_BACKUP&#xA;truncate table atmp.F0005_BACKUP&#xA;truncate table atmp.F4072_BACKUP&#xA;truncate table atmp.F40941_BACKUP&#xA;truncate table atmp.F40942_BACKUP&#xA;truncate table atmp.F4070_BACKUP&#xA;truncate table atmp.F30006_BACKUP&#xA;truncate table atmp.F0012_BACKUP&#xA;truncate table atmp.F41001_BACKUP" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="truncate table atmp.F0006_BACKUP&#xA;truncate table atmp.F0010_BACKUP&#xA;truncate table atmp.F0901_BACKUP&#xA;truncate table atmp.F4095_BACKUP&#xA;truncate table atmp.F4100_BACKUP&#xA;truncate table atmp.F49002_BACKUP&#xA;truncate table atmp.F4950_BACKUP&#xA;truncate table atmp.F0005_BACKUP&#xA;truncate table atmp.F4072_BACKUP&#xA;truncate table atmp.F40941_BACKUP&#xA;truncate table atmp.F40942_BACKUP&#xA;truncate table atmp.F4070_BACKUP&#xA;truncate table atmp.F30006_BACKUP&#xA;truncate table atmp.F0012_BACKUP&#xA;truncate table atmp.F41001_BACKUP&#xA;truncate table atmp.F46091_BACKUP" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -27024,6 +28269,10 @@
           TopLeft="675,65" />
         <NodeLayout
           Size="114,42"
+          Id="Package\Backup JDE_DEVELOPMENT files\F41001"
+          TopLeft="819,147" />
+        <NodeLayout
+          Size="114,42"
           Id="Package\Backup JDE_DEVELOPMENT files\F49002"
           TopLeft="799,66" />
         <NodeLayout
@@ -27032,8 +28281,8 @@
           TopLeft="924,66" />
         <NodeLayout
           Size="114,42"
-          Id="Package\Backup JDE_DEVELOPMENT files\F41001"
-          TopLeft="819,147" />
+          Id="Package\Backup JDE_DEVELOPMENT files\F46091"
+          TopLeft="944,146" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -27793,6 +29042,70 @@
     </LayoutInfo>
   </TaskHost>
   <TaskHost
+    design-time-name="Package\Backup JDE_DEVELOPMENT files\F41001">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Backup JDE_DEVELOPMENT files\F41001\OLE DB Source"
+          TopLeft="625,226" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Backup JDE_DEVELOPMENT files\F41001\OLE DB Destination"
+          TopLeft="618,357" />
+        <EdgeLayout
+          Id="Package\Backup JDE_DEVELOPMENT files\F41001.Paths[OLE DB Source Output]"
+          TopLeft="701.75,268">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,89"
+              Start="0,0"
+              End="0,81.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,81.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Backup JDE_DEVELOPMENT files\F41001\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Backup JDE_DEVELOPMENT files\F41001\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\Backup JDE_DEVELOPMENT files\F49002">
     <LayoutInfo>
       <GraphLayout
@@ -27885,32 +29198,44 @@
     </LayoutInfo>
   </TaskHost>
   <TaskHost
-    design-time-name="Package\Backup JDE_DEVELOPMENT files\F41001">
+    design-time-name="Package\Backup JDE_DEVELOPMENT files\F46091">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="150,42"
-          Id="Package\Backup JDE_DEVELOPMENT files\F41001\OLE DB Source"
-          TopLeft="625,226" />
+          Id="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source"
+          TopLeft="523,115" />
         <NodeLayout
           Size="171,42"
-          Id="Package\Backup JDE_DEVELOPMENT files\F41001\OLE DB Destination"
-          TopLeft="618,357" />
+          Id="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination"
+          TopLeft="534,252" />
         <EdgeLayout
-          Id="Package\Backup JDE_DEVELOPMENT files\F41001.Paths[OLE DB Source Output]"
-          TopLeft="701.75,268">
+          Id="Package\Backup JDE_DEVELOPMENT files\F46091.Paths[OLE DB Source Output]"
+          TopLeft="598,157">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,89"
+              EndConnector="21.5,95"
               Start="0,0"
-              End="0,81.5">
+              End="21.5,87.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,81.5" />
+                    End="0,43.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.5"
+                    Point2="0,47.5"
+                    Point3="4,47.5" />
+                  <mssgle:LineSegment
+                    End="17.5,47.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="17.5,47.5"
+                    Point2="21.5,47.5"
+                    Point3="21.5,51.5" />
+                  <mssgle:LineSegment
+                    End="21.5,87.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -27923,7 +29248,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Backup JDE_DEVELOPMENT files\F41001\OLE DB Source">
+    design-time-name="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -27936,7 +29261,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Backup JDE_DEVELOPMENT files\F41001\OLE DB Destination">
+    design-time-name="Package\Backup JDE_DEVELOPMENT files\F46091\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

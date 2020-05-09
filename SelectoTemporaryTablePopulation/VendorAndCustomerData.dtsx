@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="44"
-  DTS:VersionGUID="{CE641502-5807-4FEB-8AB2-4BD2D75ED75F}">
+  DTS:VersionBuild="46"
+  DTS:VersionGUID="{11811043-1315-46A8-9E55-EA83F59F7EF1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3604,6 +3604,10 @@
           Id="Package\Populate atmp ShipTo\F0150"
           TopLeft="25,379" />
         <NodeLayout
+          Size="114,42"
+          Id="Package\Populate atmp ShipTo\F03012"
+          TopLeft="18,445" />
+        <NodeLayout
           Size="165,42"
           Id="Package\Populate atmp ShipTo\pop S3 into F0101"
           TopLeft="21,89" />
@@ -3707,10 +3711,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="114,42"
-          Id="Package\Populate atmp ShipTo\F03012"
-          TopLeft="18,445" />
         <EdgeLayout
           Id="Package\Populate atmp ShipTo.PrecedenceConstraints[Constraint 4]"
           TopLeft="77,421">
