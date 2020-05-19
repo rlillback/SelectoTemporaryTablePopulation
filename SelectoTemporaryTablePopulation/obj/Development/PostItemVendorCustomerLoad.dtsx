@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{6D3ABF2D-EF2A-453E-97F0-EB5CED183011}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{FD2CBE66-CBEF-4CF4-A188-79C0DBB91890}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -61,7 +61,6 @@
       DTS:refId="Package\Update Contract Pricing Rules"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{CD305316-A7E4-44D3-8AFB-B87EF8D51CB4}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -116,7 +115,6 @@
       DTS:refId="Package\Update Item Vendor Xref and Data"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{33C639DF-1633-426D-A5A0-4DC9823798D6}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
