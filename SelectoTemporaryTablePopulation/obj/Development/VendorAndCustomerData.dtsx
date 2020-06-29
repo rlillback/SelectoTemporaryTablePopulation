@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="46"
-  DTS:VersionGUID="{11811043-1315-46A8-9E55-EA83F59F7EF1}">
+  DTS:VersionBuild="59"
+  DTS:VersionGUID="{4AB9BA05-9133-4DE2-A22F-5B383AF66E81}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -243,6 +243,53 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[TaxRateCodesFlatFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{4D60431A-D45F-40AA-AFB0-BAB5AFB2DBE8}"
+      DTS:ObjectName="TaxRateCodesFlatFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="K:\KINETICO\Common\JuliaC\Ray\TaxRateCodes.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ï»¿ABALKY"
+              DTS:DTSID="{7A0E7823-AFD3-440E-AF08-A5A44FA977E7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AITXA1"
+              DTS:DTSID="{50544C74-0E4D-4AD2-B111-D285778E10DA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AIEXR1"
+              DTS:DTSID="{57E29576-37E8-4AE5-8229-1C145EB3D7DD}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[V3 Vendor GL List]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{0796AE76-4262-4DDE-B7D8-6C78B4FEFFFE}"
@@ -293,6 +340,62 @@
               DTS:TextQualified="True"
               DTS:ObjectName="AIDP"
               DTS:DTSID="{2A811B4B-7636-4F03-B2BE-F9CC6822EB29}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[VendorEFTBankAccounts]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{9658B1F4-A84A-4E08-98B8-042258A0DB3D}"
+      DTS:ObjectName="VendorEFTBankAccounts">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="K:\KINETICO\Common\JuliaC\Ray\VndrEFTBAccts.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="25"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ABALKY"
+              DTS:DTSID="{17D0C693-F0CC-4CA1-9688-E7002F65AABD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AYTNST"
+              DTS:DTSID="{A4BA6B4E-9D3B-49FE-89D8-E83BB7AFD747}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AYCBNK"
+              DTS:DTSID="{CFDC213B-E9FE-4A64-8435-3F8D23DC45DF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AYBKTP"
+              DTS:DTSID="{7D9A5232-4F9B-4E5E-B967-23F2AAD95C3F}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -1147,7 +1250,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{DC9CFE48-2945-423B-A186-7BD29B34A0DC}"
-              SQLTask:SqlStatementSource="truncate table atmp.F0101&#xA;truncate table atmp.F0111&#xA;truncate table atmp.F0115&#xA;truncate table atmp.F0116&#xA;truncate table atmp.F0401&#xA;truncate table atmp.F03012&#xA;truncate table atmp.F0150" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="truncate table atmp.F0101&#xA;truncate table atmp.F0111&#xA;truncate table atmp.F0115&#xA;truncate table atmp.F0116&#xA;truncate table atmp.F0401&#xA;truncate table atmp.F03012&#xA;truncate table atmp.F0150&#xA;truncate table atmp.F0030" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -1200,6 +1303,413 @@
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 5"
           DTS:To="Package\Populate atmp Vendor Files\pop F0401 with V3" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Populate EFT Bank Codes"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{CD005F34-7F7E-4544-8BD8-3D18E9DB45D9}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Populate EFT Bank Codes">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Populate EFT Bank Codes\Load EFT FlatFile"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{886999E3-63DA-4953-A9E7-43E1F75B5DA5}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load EFT FlatFile"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Populate EFT Bank Codes\Load EFT FlatFile\Flat File Source"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="Flat File Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Populate EFT Bank Codes\Load EFT FlatFile\Flat File Source.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[VendorEFTBankAccounts]"
+                      connectionManagerRefId="Package.ConnectionManagers[VendorEFTBankAccounts]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Populate EFT Bank Codes\Load EFT FlatFile\Flat File Source.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Populate EFT Bank Codes\Load EFT FlatFile\Flat File Source.Outputs[Flat File Source Output].Columns[ABALKY]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Populate EFT Bank Codes\Load EFT FlatFile\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ABALKY]"
+                          length="25"
+                          lineageId="Package\Populate EFT Bank Codes\Load EFT FlatFile\Flat File Source.Outputs[Flat File Source Output].Columns[ABALKY]"
+                          name="ABALKY"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Populate EFT Bank Codes\Load EFT FlatFile\Flat File Source.Outputs[Flat File Source Output].Columns[AYTNST]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Populate EFT Bank Codes\Load EFT FlatFile\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AYTNST]"
+                          length="20"
+                          lineageId="Package\Populate EFT Bank Codes\Load EFT FlatFile\Flat File Source.Outputs[Flat File Source Output].Columns[AYTNST]"
+                          name="AYTNST"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Populate EFT Bank Codes\Load EFT FlatFile\Flat File Source.Outputs[Flat File Source Output].Columns[AYCBNK]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Populate EFT Bank Codes\Load EFT FlatFile\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AYCBNK]"
+                          length="20"
+                          lineageId="Package\Populate EFT Bank Codes\Load EFT FlatFile\Flat File Source.Outputs[Flat File Source Output].Columns[AYCBNK]"
+                          name="AYCBNK"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Populate EFT Bank Codes\Load EFT FlatFile\Flat File Source.Outputs[Flat File Source Output].Columns[AYBKTP]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Populate EFT Bank Codes\Load EFT FlatFile\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AYBKTP]"
+                          length="1"
+                          lineageId="Package\Populate EFT Bank Codes\Load EFT FlatFile\Flat File Source.Outputs[Flat File Source Output].Columns[AYBKTP]"
+                          name="AYBKTP"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Populate EFT Bank Codes\Load EFT FlatFile\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ABALKY]"
+                          dataType="wstr"
+                          length="25"
+                          name="ABALKY" />
+                        <externalMetadataColumn
+                          refId="Package\Populate EFT Bank Codes\Load EFT FlatFile\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AYTNST]"
+                          dataType="wstr"
+                          length="20"
+                          name="AYTNST" />
+                        <externalMetadataColumn
+                          refId="Package\Populate EFT Bank Codes\Load EFT FlatFile\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AYCBNK]"
+                          dataType="wstr"
+                          length="20"
+                          name="AYCBNK" />
+                        <externalMetadataColumn
+                          refId="Package\Populate EFT Bank Codes\Load EFT FlatFile\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AYBKTP]"
+                          dataType="wstr"
+                          length="1"
+                          name="AYBKTP" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Populate EFT Bank Codes\Load EFT FlatFile\Flat File Source.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Populate EFT Bank Codes\Load EFT FlatFile\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="65001"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Populate EFT Bank Codes\Load EFT FlatFile\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Populate EFT Bank Codes\Load EFT FlatFile\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Populate EFT Bank Codes\Load EFT FlatFile\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Populate EFT Bank Codes\Load EFT FlatFile\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Populate EFT Bank Codes\Load EFT FlatFile\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Populate EFT Bank Codes\Load EFT FlatFile\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[ods_VendorEFTFlatFile]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Populate EFT Bank Codes\Load EFT FlatFile\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[N01A-DWSQLPD.SelectoJDE]"
+                      connectionManagerRefId="Package.ConnectionManagers[N01A-DWSQLPD.SelectoJDE]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Populate EFT Bank Codes\Load EFT FlatFile\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Populate EFT Bank Codes\Load EFT FlatFile\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ABALKY]"
+                          cachedDataType="wstr"
+                          cachedLength="25"
+                          cachedName="ABALKY"
+                          externalMetadataColumnId="Package\Populate EFT Bank Codes\Load EFT FlatFile\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ALKY]"
+                          lineageId="Package\Populate EFT Bank Codes\Load EFT FlatFile\Flat File Source.Outputs[Flat File Source Output].Columns[ABALKY]" />
+                        <inputColumn
+                          refId="Package\Populate EFT Bank Codes\Load EFT FlatFile\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AYBKTP]"
+                          cachedDataType="wstr"
+                          cachedLength="1"
+                          cachedName="AYBKTP"
+                          externalMetadataColumnId="Package\Populate EFT Bank Codes\Load EFT FlatFile\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BKTP]"
+                          lineageId="Package\Populate EFT Bank Codes\Load EFT FlatFile\Flat File Source.Outputs[Flat File Source Output].Columns[AYBKTP]" />
+                        <inputColumn
+                          refId="Package\Populate EFT Bank Codes\Load EFT FlatFile\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AYTNST]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="AYTNST"
+                          externalMetadataColumnId="Package\Populate EFT Bank Codes\Load EFT FlatFile\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TNST]"
+                          lineageId="Package\Populate EFT Bank Codes\Load EFT FlatFile\Flat File Source.Outputs[Flat File Source Output].Columns[AYTNST]" />
+                        <inputColumn
+                          refId="Package\Populate EFT Bank Codes\Load EFT FlatFile\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AYCBNK]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="AYCBNK"
+                          externalMetadataColumnId="Package\Populate EFT Bank Codes\Load EFT FlatFile\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CBNK]"
+                          lineageId="Package\Populate EFT Bank Codes\Load EFT FlatFile\Flat File Source.Outputs[Flat File Source Output].Columns[AYCBNK]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Populate EFT Bank Codes\Load EFT FlatFile\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ALKY]"
+                          dataType="wstr"
+                          length="25"
+                          name="ALKY" />
+                        <externalMetadataColumn
+                          refId="Package\Populate EFT Bank Codes\Load EFT FlatFile\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BKTP]"
+                          dataType="wstr"
+                          length="1"
+                          name="BKTP" />
+                        <externalMetadataColumn
+                          refId="Package\Populate EFT Bank Codes\Load EFT FlatFile\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TNST]"
+                          dataType="wstr"
+                          length="20"
+                          name="TNST" />
+                        <externalMetadataColumn
+                          refId="Package\Populate EFT Bank Codes\Load EFT FlatFile\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CBNK]"
+                          dataType="wstr"
+                          length="20"
+                          name="CBNK" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Populate EFT Bank Codes\Load EFT FlatFile\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Populate EFT Bank Codes\Load EFT FlatFile\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Populate EFT Bank Codes\Load EFT FlatFile\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Populate EFT Bank Codes\Load EFT FlatFile\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Populate EFT Bank Codes\Load EFT FlatFile\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Populate EFT Bank Codes\Load EFT FlatFile\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Populate EFT Bank Codes\Load EFT FlatFile.Paths[Flat File Source Output]"
+                  endId="Package\Populate EFT Bank Codes\Load EFT FlatFile\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Populate EFT Bank Codes\Load EFT FlatFile\Flat File Source.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Populate EFT Bank Codes\Pop F0030"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{134F05A9-4333-454E-A4D4-4F0402C182A7}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Pop F0030"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{DC9CFE48-2945-423B-A186-7BD29B34A0DC}"
+              SQLTask:SqlStatementSource="exec dbo.usp_F0030_Vendor" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Populate EFT Bank Codes\Trunc EFT FlatFIle"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{B5F0CC3E-CFE9-472A-A97A-499A3783F149}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Trunc EFT FlatFIle"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{DC9CFE48-2945-423B-A186-7BD29B34A0DC}"
+              SQLTask:SqlStatementSource="truncate table dbo.ods_VendorEFTFlatFile" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Populate EFT Bank Codes.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{F530C582-DA54-455C-BE38-7A6C5BD7040D}"
+          DTS:From="Package\Populate EFT Bank Codes\Trunc EFT FlatFIle"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Populate EFT Bank Codes\Load EFT FlatFile" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Populate EFT Bank Codes.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{AC1EBA09-FA39-4F34-914F-7CCA8D87107E}"
+          DTS:From="Package\Populate EFT Bank Codes\Load EFT FlatFile"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Populate EFT Bank Codes\Pop F0030" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
@@ -3208,6 +3718,399 @@
           DTS:To="Package\Populate Vendor Flat File with csv Data\Populate Remit R3 vendors" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update Tax Area Codes"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{C0C17B0B-B4F6-4913-B2E3-E17DD9DB46A0}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update Tax Area Codes">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Update Tax Area Codes\Fix leading zeros"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{aff95d98-7d0d-485b-b0d5-99804ffb5478}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Fix leading zeros"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{DC9CFE48-2945-423B-A186-7BD29B34A0DC}"
+              SQLTask:SqlStatementSource="update dbo.ods_TaxRateCodesFlatFile&#xA;set ALKY = ltrim(rtrim(substring(ALKY,patindex('%[^0]%',ALKY),20)))" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Update Tax Area Codes\pull flat file tax codes"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{715da618-0b0e-4d99-b802-c91b838ed9e0}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="pull flat file tax codes"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Update Tax Area Codes\pull flat file tax codes\Flat File Source"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="Flat File Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Update Tax Area Codes\pull flat file tax codes\Flat File Source.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[TaxRateCodesFlatFile]"
+                      connectionManagerRefId="Package.ConnectionManagers[TaxRateCodesFlatFile]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Update Tax Area Codes\pull flat file tax codes\Flat File Source.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Update Tax Area Codes\pull flat file tax codes\Flat File Source.Outputs[Flat File Source Output].Columns[ï»¿ABALKY]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Update Tax Area Codes\pull flat file tax codes\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ï»¿ABALKY]"
+                          length="20"
+                          lineageId="Package\Update Tax Area Codes\pull flat file tax codes\Flat File Source.Outputs[Flat File Source Output].Columns[ï»¿ABALKY]"
+                          name="ï»¿ABALKY"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Update Tax Area Codes\pull flat file tax codes\Flat File Source.Outputs[Flat File Source Output].Columns[AITXA1]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Update Tax Area Codes\pull flat file tax codes\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AITXA1]"
+                          length="10"
+                          lineageId="Package\Update Tax Area Codes\pull flat file tax codes\Flat File Source.Outputs[Flat File Source Output].Columns[AITXA1]"
+                          name="AITXA1"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Update Tax Area Codes\pull flat file tax codes\Flat File Source.Outputs[Flat File Source Output].Columns[AIEXR1]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Update Tax Area Codes\pull flat file tax codes\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AIEXR1]"
+                          length="2"
+                          lineageId="Package\Update Tax Area Codes\pull flat file tax codes\Flat File Source.Outputs[Flat File Source Output].Columns[AIEXR1]"
+                          name="AIEXR1"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Update Tax Area Codes\pull flat file tax codes\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ï»¿ABALKY]"
+                          dataType="wstr"
+                          length="20"
+                          name="ï»¿ABALKY" />
+                        <externalMetadataColumn
+                          refId="Package\Update Tax Area Codes\pull flat file tax codes\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AITXA1]"
+                          dataType="wstr"
+                          length="10"
+                          name="AITXA1" />
+                        <externalMetadataColumn
+                          refId="Package\Update Tax Area Codes\pull flat file tax codes\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AIEXR1]"
+                          dataType="wstr"
+                          length="2"
+                          name="AIEXR1" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Update Tax Area Codes\pull flat file tax codes\Flat File Source.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Update Tax Area Codes\pull flat file tax codes\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Update Tax Area Codes\pull flat file tax codes\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Update Tax Area Codes\pull flat file tax codes\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Update Tax Area Codes\pull flat file tax codes\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Update Tax Area Codes\pull flat file tax codes\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Update Tax Area Codes\pull flat file tax codes\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Update Tax Area Codes\pull flat file tax codes\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[ods_TaxRateCodesFlatFile]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Update Tax Area Codes\pull flat file tax codes\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[N01A-DWSQLPD.SelectoJDE]"
+                      connectionManagerRefId="Package.ConnectionManagers[N01A-DWSQLPD.SelectoJDE]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Update Tax Area Codes\pull flat file tax codes\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Update Tax Area Codes\pull flat file tax codes\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ï»¿ABALKY]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="ï»¿ABALKY"
+                          externalMetadataColumnId="Package\Update Tax Area Codes\pull flat file tax codes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ALKY]"
+                          lineageId="Package\Update Tax Area Codes\pull flat file tax codes\Flat File Source.Outputs[Flat File Source Output].Columns[ï»¿ABALKY]" />
+                        <inputColumn
+                          refId="Package\Update Tax Area Codes\pull flat file tax codes\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AITXA1]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="AITXA1"
+                          externalMetadataColumnId="Package\Update Tax Area Codes\pull flat file tax codes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TXA1]"
+                          lineageId="Package\Update Tax Area Codes\pull flat file tax codes\Flat File Source.Outputs[Flat File Source Output].Columns[AITXA1]" />
+                        <inputColumn
+                          refId="Package\Update Tax Area Codes\pull flat file tax codes\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AIEXR1]"
+                          cachedDataType="wstr"
+                          cachedLength="2"
+                          cachedName="AIEXR1"
+                          externalMetadataColumnId="Package\Update Tax Area Codes\pull flat file tax codes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EXR1]"
+                          lineageId="Package\Update Tax Area Codes\pull flat file tax codes\Flat File Source.Outputs[Flat File Source Output].Columns[AIEXR1]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Update Tax Area Codes\pull flat file tax codes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ALKY]"
+                          dataType="wstr"
+                          length="20"
+                          name="ALKY" />
+                        <externalMetadataColumn
+                          refId="Package\Update Tax Area Codes\pull flat file tax codes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TXA1]"
+                          dataType="wstr"
+                          length="10"
+                          name="TXA1" />
+                        <externalMetadataColumn
+                          refId="Package\Update Tax Area Codes\pull flat file tax codes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EXR1]"
+                          dataType="wstr"
+                          length="2"
+                          name="EXR1" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Update Tax Area Codes\pull flat file tax codes\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Update Tax Area Codes\pull flat file tax codes\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Update Tax Area Codes\pull flat file tax codes\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Update Tax Area Codes\pull flat file tax codes\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Update Tax Area Codes\pull flat file tax codes\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Update Tax Area Codes\pull flat file tax codes\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Update Tax Area Codes\pull flat file tax codes.Paths[Flat File Source Output]"
+                  endId="Package\Update Tax Area Codes\pull flat file tax codes\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Update Tax Area Codes\pull flat file tax codes\Flat File Source.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Update Tax Area Codes\truncate tax code file"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{c1aef1c6-2857-405f-a3ae-863143d9a1f8}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="truncate tax code file"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{DC9CFE48-2945-423B-A186-7BD29B34A0DC}"
+              SQLTask:SqlStatementSource="truncate table dbo.ods_TaxRateCodesFlatFile" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Update Tax Area Codes\Update F03012"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{09B73DD8-2ABF-40C8-A288-FFABB81E4E80}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Update F03012"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{DC9CFE48-2945-423B-A186-7BD29B34A0DC}"
+              SQLTask:SqlStatementSource="update a&#xA;set a.AITXA1 = b.TXA1, a.AIEXR1 = b.EXR1&#xA;from atmp.F03012 as a&#xA;join atmp.F0101 as c on a.AIAN8 = c.ABAN8&#xA;join dbo.ods_TaxRateCodesFlatFile as b on c.ABALKY = b.ALKY&#xA;where TXA1 &lt;&gt; ''" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Update Tax Area Codes.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{83F1FDBD-A739-4C24-9E38-89BD14C4E56E}"
+          DTS:From="Package\Update Tax Area Codes\Fix leading zeros"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Update Tax Area Codes\Update F03012" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Update Tax Area Codes.PrecedenceConstraints[Constraint 7]"
+          DTS:CreationName=""
+          DTS:DTSID="{cd6b4b90-dc85-4eaf-b93a-6b9ce06b5f1a}"
+          DTS:From="Package\Update Tax Area Codes\pull flat file tax codes"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 7"
+          DTS:To="Package\Update Tax Area Codes\Fix leading zeros" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Update Tax Area Codes.PrecedenceConstraints[Constraint 8]"
+          DTS:CreationName=""
+          DTS:DTSID="{1cdccac4-6156-44db-b004-39101db1fabf}"
+          DTS:From="Package\Update Tax Area Codes\truncate tax code file"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 8"
+          DTS:To="Package\Update Tax Area Codes\pull flat file tax codes" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -3229,11 +4132,11 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{5C85FB25-5A51-4EFF-89DF-97E7BACE4BBB}"
+      DTS:DTSID="{E85FD542-CE19-46E1-8C10-2EB7DB75B49B}"
       DTS:From="Package\Populate atmp Remits"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
-      DTS:To="Package\Populate atmp Customer" />
+      DTS:To="Package\Populate EFT Bank Codes" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
@@ -3242,6 +4145,22 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
       DTS:To="Package\Populate atmp ShipTo" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{AB00DA87-DF60-43B7-897B-3B9DB4D901D9}"
+      DTS:From="Package\Populate EFT Bank Codes"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Populate atmp Customer" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{AD32CEF4-A8F8-42DA-A11F-9F8BAD27B977}"
+      DTS:From="Package\Populate atmp ShipTo"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Update Tax Area Codes" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -3258,61 +4177,61 @@
         <NodeLayout
           Size="165,42"
           Id="Package\Populate atmp Customer\pop C3 into F0101"
-          TopLeft="6,251.75" />
+          TopLeft="23.926406926407,220.369047619048" />
         <NodeLayout
           Size="129,42"
           Id="Package\Populate atmp Customer\pop F0111"
-          TopLeft="18,320.75" />
+          TopLeft="35.926406926407,289.369047619048" />
         <NodeLayout
           Size="129,42"
           Id="Package\Populate atmp Customer\pop F0115"
-          TopLeft="18,393.75" />
+          TopLeft="35.926406926407,362.369047619048" />
         <NodeLayout
           Size="129,42"
           Id="Package\Populate atmp Customer\pop F0116"
-          TopLeft="20,465.75" />
+          TopLeft="37.926406926407,434.369047619048" />
         <NodeLayout
           Size="135,42"
           Id="Package\Populate atmp Customer\pop F03012"
-          TopLeft="14,541.75" />
+          TopLeft="31.926406926407,510.369047619048" />
         <NodeLayout
           Size="201,42"
           Id="Package\Populate atmp Customer\Pull flat file of sales codes"
-          TopLeft="11,113" />
+          TopLeft="28.926406926407,81.6190476190483" />
         <NodeLayout
           Size="158,42"
           Id="Package\Populate atmp Customer\TEMPORARY FIX"
-          TopLeft="12,180.75" />
+          TopLeft="29.926406926407,149.369047619048" />
         <NodeLayout
           Size="185,42"
           Id="Package\Populate atmp Customer\truncate sales code tbl"
-          TopLeft="6,45" />
+          TopLeft="23.926406926407,13.6190476190474" />
         <EdgeLayout
           Id="Package\Populate atmp Customer.PrecedenceConstraints[Constraint]"
-          TopLeft="98.5,87">
+          TopLeft="116.426406926407,55.6190476190473">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="13,26"
+              EndConnector="13,26.0000000000011"
               Start="0,0"
-              End="13,18.5">
+              End="13,18.5000000000011">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,9" />
+                    End="0,9.00000000000051" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,9"
-                    Point2="0,13"
-                    Point3="4,13" />
+                    Point1="0,9.00000000000051"
+                    Point2="0,13.0000000000005"
+                    Point3="4,13.0000000000005" />
                   <mssgle:LineSegment
-                    End="9,13" />
+                    End="9,13.0000000000005" />
                   <mssgle:CubicBezierSegment
-                    Point1="9,13"
-                    Point2="13,13"
-                    Point3="13,17" />
+                    Point1="9,13.0000000000005"
+                    Point2="13,13.0000000000005"
+                    Point3="13,17.0000000000005" />
                   <mssgle:LineSegment
-                    End="13,18.5" />
+                    End="13,18.5000000000011" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3323,7 +4242,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Populate atmp Customer.PrecedenceConstraints[Constraint 1]"
-          TopLeft="85.5,293.75">
+          TopLeft="103.426406926407,262.369047619048">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3345,7 +4264,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Populate atmp Customer.PrecedenceConstraints[Constraint 2]"
-          TopLeft="82.5,362.75">
+          TopLeft="100.426406926407,331.369047619048">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3367,7 +4286,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Populate atmp Customer.PrecedenceConstraints[Constraint 3]"
-          TopLeft="83.5,435.75">
+          TopLeft="101.426406926407,404.369047619048">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3389,7 +4308,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Populate atmp Customer.PrecedenceConstraints[Constraint 4]"
-          TopLeft="83,507.75">
+          TopLeft="100.926406926407,476.369047619048">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3411,30 +4330,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Populate atmp Customer.PrecedenceConstraints[Constraint 5]"
-          TopLeft="111.5,155">
+          TopLeft="129.426406926407,123.619047619048">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-20.5,25.7500000000001"
+              EndConnector="-20.5,25.7500000000002"
               Start="0,0"
-              End="-20.5,18.2500000000001">
+              End="-20.5,18.2500000000002">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,8.87500000000003" />
+                    End="0,8.87499999999994" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,8.87500000000003"
-                    Point2="0,12.875"
-                    Point3="-4,12.875" />
+                    Point1="0,8.87499999999994"
+                    Point2="0,12.8749999999999"
+                    Point3="-4,12.8749999999999" />
                   <mssgle:LineSegment
-                    End="-16.5,12.875" />
+                    End="-16.5,12.8749999999999" />
                   <mssgle:CubicBezierSegment
-                    Point1="-16.5,12.875"
-                    Point2="-20.5,12.875"
-                    Point3="-20.5,16.875" />
+                    Point1="-16.5,12.8749999999999"
+                    Point2="-20.5,12.8749999999999"
+                    Point3="-20.5,16.8749999999999" />
                   <mssgle:LineSegment
-                    End="-20.5,18.2500000000001" />
+                    End="-20.5,18.2500000000002" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3445,7 +4364,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Populate atmp Customer.PrecedenceConstraints[Constraint 6]"
-          TopLeft="89.75,222.75">
+          TopLeft="107.676406926407,191.369047619048">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3468,33 +4387,33 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="218,639"
-          Size="218,682"
+          PanelSize="245,564"
+          Size="245,607"
           Id="Package\Populate atmp Customer"
-          TopLeft="973.428571428572,169.714285714286" />
+          TopLeft="971.761904761905,312.309523809524" />
         <NodeLayout
           Size="162,42"
           Id="Package\Populate atmp Remits\pop R3 addresses"
-          TopLeft="27,299" />
+          TopLeft="27,223" />
         <NodeLayout
           Size="145,42"
           Id="Package\Populate atmp Remits\pop R3 F0401"
-          TopLeft="31,367" />
+          TopLeft="31,291" />
         <NodeLayout
           Size="166,42"
           Id="Package\Populate atmp Remits\pop R3 into F0101"
-          TopLeft="28,89" />
+          TopLeft="28,13" />
         <NodeLayout
           Size="179,42"
           Id="Package\Populate atmp Remits\pop R3 names F0111"
-          TopLeft="21,158" />
+          TopLeft="21,82" />
         <NodeLayout
           Size="150,42"
           Id="Package\Populate atmp Remits\pop R3 phones"
-          TopLeft="36,230" />
+          TopLeft="36,154" />
         <EdgeLayout
           Id="Package\Populate atmp Remits.PrecedenceConstraints[Constraint 1]"
-          TopLeft="110.75,131">
+          TopLeft="110.75,55">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3516,7 +4435,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Populate atmp Remits.PrecedenceConstraints[Constraint 2]"
-          TopLeft="110.75,200">
+          TopLeft="110.75,124">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3538,7 +4457,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Populate atmp Remits.PrecedenceConstraints[Constraint 3]"
-          TopLeft="109.5,272">
+          TopLeft="109.5,196">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3560,7 +4479,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Populate atmp Remits.PrecedenceConstraints[Constraint 4]"
-          TopLeft="105.75,341">
+          TopLeft="105.75,265">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3583,10 +4502,10 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="215,463"
-          Size="215,506"
+          PanelSize="215,355"
+          Size="215,398"
           Id="Package\Populate atmp Remits"
-          TopLeft="708.428571428571,256.714285714286" />
+          TopLeft="711.428571428571,296.714285714286" />
         <NodeLayout
           Size="108,42"
           Id="Package\Populate atmp ShipTo\F0111"
@@ -3736,10 +4655,10 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="211,545"
-          Size="211,588"
+          PanelSize="211,518"
+          Size="211,561"
           Id="Package\Populate atmp ShipTo"
-          TopLeft="1237,244" />
+          TopLeft="1257,322" />
         <NodeLayout
           Size="203,42"
           Id="Package\Populate atmp Vendor Files\pop F0111 with V3 Names"
@@ -3942,7 +4861,70 @@
           PanelSize="299,485"
           Size="299,528"
           Id="Package\Populate atmp Vendor Files"
-          TopLeft="374.928571428571,231.714285714286" />
+          TopLeft="374.928571428571,361.714285714286" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Populate EFT Bank Codes\Load EFT FlatFile"
+          TopLeft="27,83" />
+        <NodeLayout
+          Size="129,42"
+          Id="Package\Populate EFT Bank Codes\Pop F0030"
+          TopLeft="38,153" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Populate EFT Bank Codes\Trunc EFT FlatFIle"
+          TopLeft="25,13" />
+        <EdgeLayout
+          Id="Package\Populate EFT Bank Codes.PrecedenceConstraints[Constraint]"
+          TopLeft="107,55">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate EFT Bank Codes.PrecedenceConstraints[Constraint 1]"
+          TopLeft="104.5,125">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="231,214"
+          Size="231,257"
+          Id="Package\Populate EFT Bank Codes"
+          TopLeft="711,718" />
         <NodeLayout
           Size="208,42"
           Id="Package\Populate Vendor Flat File with csv Data\Populate GL for V3 vendors"
@@ -4057,10 +5039,10 @@
           PanelSize="293,390"
           Size="293,433"
           Id="Package\Populate Vendor Flat File with csv Data"
-          TopLeft="39.4285714285714,295.714285714286" />
+          TopLeft="39.4285714285714,425.714285714286" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="332.428571428571,512.214285714286">
+          TopLeft="332.428571428571,642.214285714286">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4094,30 +5076,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="673.928571428571,495.714285714286">
+          TopLeft="673.928571428571,625.714285714286">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="34.5,14"
+              EndConnector="37.5,-130"
               Start="0,0"
-              End="27,14">
+              End="30,-130">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="13.25,0" />
+                    End="14.75,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="13.25,0"
-                    Point2="17.25,0"
-                    Point3="17.25,4" />
+                    Point1="14.75,0"
+                    Point2="18.75,0"
+                    Point3="18.75,-4" />
                   <mssgle:LineSegment
-                    End="17.25,10" />
+                    End="18.75,-126" />
                   <mssgle:CubicBezierSegment
-                    Point1="17.25,10"
-                    Point2="17.25,14"
-                    Point3="21.25,14" />
+                    Point1="18.75,-126"
+                    Point2="18.75,-130"
+                    Point3="22.75,-130" />
                   <mssgle:LineSegment
-                    End="27,14" />
+                    End="30,-130" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4128,18 +5110,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="923.428571428571,510.214285714286">
+          TopLeft="822.714285714286,694.714285714286">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="50.000000000001,0"
+              EndConnector="0,23.285714285714"
               Start="0,0"
-              End="42.500000000001,0">
+              End="0,15.785714285714">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="42.500000000001,0" />
+                    End="0,15.785714285714" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4150,30 +5132,64 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="1191.42857142857,510.714285714286">
+          TopLeft="1216.76190476191,615.809523809524">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="45.571428571428,27.285714285714"
+              EndConnector="40.2380952380947,-13.3095238095242"
               Start="0,0"
-              End="38.071428571428,27.285714285714">
+              End="32.7380952380947,-13.3095238095242">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="18.785714285714,0" />
+                    End="16.1190476190474,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="18.785714285714,0"
-                    Point2="22.785714285714,0"
-                    Point3="22.785714285714,4" />
+                    Point1="16.1190476190474,0"
+                    Point2="20.1190476190474,0"
+                    Point3="20.1190476190474,-4" />
                   <mssgle:LineSegment
-                    End="22.785714285714,23.285714285714" />
+                    End="20.1190476190474,-9.30952380952419" />
                   <mssgle:CubicBezierSegment
-                    Point1="22.785714285714,23.285714285714"
-                    Point2="22.785714285714,27.285714285714"
-                    Point3="26.785714285714,27.285714285714" />
+                    Point1="20.1190476190474,-9.30952380952419"
+                    Point2="20.1190476190474,-13.3095238095242"
+                    Point3="24.1190476190474,-13.3095238095242" />
                   <mssgle:LineSegment
-                    End="38.071428571428,27.285714285714" />
+                    End="32.7380952380947,-13.3095238095242" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="942,846.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="29.7619047619053,-230.690476190476"
+              Start="0,0"
+              End="22.2619047619053,-230.690476190476">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="10.8809523809526,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="10.8809523809526,0"
+                    Point2="14.8809523809526,0"
+                    Point3="14.8809523809526,-4" />
+                  <mssgle:LineSegment
+                    End="14.8809523809526,-226.690476190476" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.8809523809526,-226.690476190476"
+                    Point2="14.8809523809526,-230.690476190476"
+                    Point3="18.8809523809526,-230.690476190476" />
+                  <mssgle:LineSegment
+                    End="22.2619047619053,-230.690476190476" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4188,7 +5204,142 @@
           FontInfo="{assembly:Null}"
           Size="35,40"
           Id="17178a84-28b5-41cd-8f5a-21cec0a113a3"
-          TopLeft="1785.71428571429,720" />
+          TopLeft="1785.71428571429,850" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Update Tax Area Codes\pull flat file tax codes"
+          TopLeft="24.2424242424245,82.1818181818181" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Update Tax Area Codes\truncate tax code file"
+          TopLeft="13.3333333333335,14.9999999999999" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Update Tax Area Codes\Fix leading zeros"
+          TopLeft="26.8787878787882,147.090909090909" />
+        <EdgeLayout
+          Id="Package\Update Tax Area Codes.PrecedenceConstraints[Constraint 8]"
+          TopLeft="102.833333333333,56.9999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.909090909091,25.1818181818182"
+              Start="0,0"
+              End="10.909090909091,17.6818181818182">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.59090909090912" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.59090909090912"
+                    Point2="0,12.5909090909091"
+                    Point3="4,12.5909090909091" />
+                  <mssgle:LineSegment
+                    End="6.90909090909099,12.5909090909091" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.90909090909099,12.5909090909091"
+                    Point2="10.909090909091,12.5909090909091"
+                    Point3="10.909090909091,16.5909090909091" />
+                  <mssgle:LineSegment
+                    End="10.909090909091,17.6818181818182" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update Tax Area Codes.PrecedenceConstraints[Constraint 7]"
+          TopLeft="109.810606060606,124.181818181818">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,22.9090909090909"
+              Start="0,0"
+              End="0,15.4090909090909">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.4090909090909" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Update Tax Area Codes\Update F03012"
+          TopLeft="33,228.111111111111" />
+        <EdgeLayout
+          Id="Package\Update Tax Area Codes.PrecedenceConstraints[Constraint]"
+          TopLeft="107.189393939394,189.090909090909">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.0202020202024"
+              Start="0,0"
+              End="0,31.5202020202024">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5202020202024" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="225,330"
+          Size="225,373"
+          Id="Package\Update Tax Area Codes"
+          TopLeft="1536.66666666667,480" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="1468,602.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="68.6666666666667,64.0000000000001"
+              Start="0,0"
+              End="61.1666666666667,64.0000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="30.3333333333334,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="30.3333333333334,0"
+                    Point2="34.3333333333334,0"
+                    Point3="34.3333333333334,4" />
+                  <mssgle:LineSegment
+                    End="34.3333333333334,60.0000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="34.3333333333334,60.0000000000001"
+                    Point2="34.3333333333334,64.0000000000001"
+                    Point3="38.3333333333334,64.0000000000001" />
+                  <mssgle:LineSegment
+                    End="61.1666666666667,64.0000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -4234,6 +5385,59 @@
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Populate atmp Customer\Pull flat file of sales codes\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Populate EFT Bank Codes\Load EFT FlatFile">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Populate EFT Bank Codes\Load EFT FlatFile\OLE DB Destination"
+          TopLeft="500,241" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Populate EFT Bank Codes\Load EFT FlatFile\Flat File Source"
+          TopLeft="517,111" />
+        <EdgeLayout
+          Id="Package\Populate EFT Bank Codes\Load EFT FlatFile.Paths[Flat File Source Output]"
+          TopLeft="589,153">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,88"
+              Start="0,0"
+              End="0,80.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,80.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate EFT Bank Codes\Load EFT FlatFile\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4605,5 +5809,45 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Update Tax Area Codes\pull flat file tax codes">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Update Tax Area Codes\pull flat file tax codes\Flat File Source"
+          TopLeft="500,122" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Update Tax Area Codes\pull flat file tax codes\OLE DB Destination"
+          TopLeft="489,246" />
+        <EdgeLayout
+          Id="Package\Update Tax Area Codes\pull flat file tax codes.Paths[Flat File Source Output]"
+          TopLeft="575,164">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,82"
+              Start="0,0"
+              End="0,74.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,74.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
