@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="59"
-  DTS:VersionGUID="{4AB9BA05-9133-4DE2-A22F-5B383AF66E81}">
+  DTS:VersionBuild="60"
+  DTS:VersionGUID="{A2AA05AB-92A3-40FA-9B1C-EF1DAC7A6E6A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -4505,7 +4505,7 @@
           PanelSize="215,355"
           Size="215,398"
           Id="Package\Populate atmp Remits"
-          TopLeft="711.428571428571,296.714285714286" />
+          TopLeft="711.428571428571,295.714285714286" />
         <NodeLayout
           Size="108,42"
           Id="Package\Populate atmp ShipTo\F0111"
@@ -5040,6 +5040,107 @@
           Size="293,433"
           Id="Package\Populate Vendor Flat File with csv Data"
           TopLeft="39.4285714285714,425.714285714286" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Update Tax Area Codes\Fix leading zeros"
+          TopLeft="26.8787878787882,147.090909090909" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Update Tax Area Codes\pull flat file tax codes"
+          TopLeft="24.2424242424245,82.1818181818181" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Update Tax Area Codes\truncate tax code file"
+          TopLeft="13.3333333333335,14.9999999999999" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Update Tax Area Codes\Update F03012"
+          TopLeft="33,228.111111111111" />
+        <EdgeLayout
+          Id="Package\Update Tax Area Codes.PrecedenceConstraints[Constraint]"
+          TopLeft="107.189393939394,189.090909090909">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.0202020202024"
+              Start="0,0"
+              End="0,31.5202020202024">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5202020202024" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update Tax Area Codes.PrecedenceConstraints[Constraint 7]"
+          TopLeft="109.810606060606,124.181818181818">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,22.9090909090909"
+              Start="0,0"
+              End="0,15.4090909090909">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.4090909090909" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update Tax Area Codes.PrecedenceConstraints[Constraint 8]"
+          TopLeft="102.833333333333,56.9999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.909090909091,25.1818181818182"
+              Start="0,0"
+              End="10.909090909091,17.6818181818182">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.59090909090912" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.59090909090912"
+                    Point2="0,12.5909090909091"
+                    Point3="4,12.5909090909091" />
+                  <mssgle:LineSegment
+                    End="6.90909090909099,12.5909090909091" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.90909090909099,12.5909090909091"
+                    Point2="10.909090909091,12.5909090909091"
+                    Point3="10.909090909091,16.5909090909091" />
+                  <mssgle:LineSegment
+                    End="10.909090909091,17.6818181818182" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="225,330"
+          Size="225,373"
+          Id="Package\Update Tax Area Codes"
+          TopLeft="1536.66666666667,480" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="332.428571428571,642.214285714286">
@@ -5080,9 +5181,9 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="37.5,-130"
+              EndConnector="37.5,-131"
               Start="0,0"
-              End="30,-130">
+              End="30,-131">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -5093,13 +5194,13 @@
                     Point2="18.75,0"
                     Point3="18.75,-4" />
                   <mssgle:LineSegment
-                    End="18.75,-126" />
+                    End="18.75,-127" />
                   <mssgle:CubicBezierSegment
-                    Point1="18.75,-126"
-                    Point2="18.75,-130"
-                    Point3="22.75,-130" />
+                    Point1="18.75,-127"
+                    Point2="18.75,-131"
+                    Point3="22.75,-131" />
                   <mssgle:LineSegment
-                    End="30,-130" />
+                    End="30,-131" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5110,18 +5211,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="822.714285714286,694.714285714286">
+          TopLeft="822.714285714286,693.714285714286">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,23.285714285714"
+              EndConnector="0,24.285714285714"
               Start="0,0"
-              End="0,15.785714285714">
+              End="0,16.785714285714">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.785714285714" />
+                    End="0,16.785714285714" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5198,114 +5299,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <AnnotationLayout
-          Text="1"
-          ParentId="Package"
-          FontInfo="{assembly:Null}"
-          Size="35,40"
-          Id="17178a84-28b5-41cd-8f5a-21cec0a113a3"
-          TopLeft="1785.71428571429,850" />
-        <NodeLayout
-          Size="179,42"
-          Id="Package\Update Tax Area Codes\pull flat file tax codes"
-          TopLeft="24.2424242424245,82.1818181818181" />
-        <NodeLayout
-          Size="179,42"
-          Id="Package\Update Tax Area Codes\truncate tax code file"
-          TopLeft="13.3333333333335,14.9999999999999" />
-        <NodeLayout
-          Size="158,42"
-          Id="Package\Update Tax Area Codes\Fix leading zeros"
-          TopLeft="26.8787878787882,147.090909090909" />
-        <EdgeLayout
-          Id="Package\Update Tax Area Codes.PrecedenceConstraints[Constraint 8]"
-          TopLeft="102.833333333333,56.9999999999999">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="10.909090909091,25.1818181818182"
-              Start="0,0"
-              End="10.909090909091,17.6818181818182">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,8.59090909090912" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,8.59090909090912"
-                    Point2="0,12.5909090909091"
-                    Point3="4,12.5909090909091" />
-                  <mssgle:LineSegment
-                    End="6.90909090909099,12.5909090909091" />
-                  <mssgle:CubicBezierSegment
-                    Point1="6.90909090909099,12.5909090909091"
-                    Point2="10.909090909091,12.5909090909091"
-                    Point3="10.909090909091,16.5909090909091" />
-                  <mssgle:LineSegment
-                    End="10.909090909091,17.6818181818182" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Update Tax Area Codes.PrecedenceConstraints[Constraint 7]"
-          TopLeft="109.810606060606,124.181818181818">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,22.9090909090909"
-              Start="0,0"
-              End="0,15.4090909090909">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.4090909090909" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="151,42"
-          Id="Package\Update Tax Area Codes\Update F03012"
-          TopLeft="33,228.111111111111" />
-        <EdgeLayout
-          Id="Package\Update Tax Area Codes.PrecedenceConstraints[Constraint]"
-          TopLeft="107.189393939394,189.090909090909">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.0202020202024"
-              Start="0,0"
-              End="0,31.5202020202024">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5202020202024" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="225,330"
-          Size="225,373"
-          Id="Package\Update Tax Area Codes"
-          TopLeft="1536.66666666667,480" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
           TopLeft="1468,602.5">
@@ -5340,6 +5333,13 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <AnnotationLayout
+          Text="1"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="35,40"
+          Id="17178a84-28b5-41cd-8f5a-21cec0a113a3"
+          TopLeft="1785.71428571429,850" />
       </GraphLayout>
     </LayoutInfo>
   </Package>

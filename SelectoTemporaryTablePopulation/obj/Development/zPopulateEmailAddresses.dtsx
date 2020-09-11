@@ -1,0 +1,2704 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/9/2020 10:49:05 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="N01A-DWSQLPY"
+  DTS:CreatorName="KINETICONET\rlillbac"
+  DTS:DTSID="{D57ECF82-71B7-4781-94FF-61AFA3CB484E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1301.433"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{17BBB9D4-6A94-4686-9A87-2CB062E4E98D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[N01A-DWSQLPD.SelectoJDE]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6755D6CB-7434-4F24-89D1-AB96521C4FE9}"
+      DTS:ObjectName="N01A-DWSQLPD.SelectoJDE">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=N01A-DWSQLPD;Initial Catalog=SelectoJDE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[TabDelimitedACHEmails]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{42D6657A-DF15-49ED-B90A-14CBAEFBCF3B}"
+      DTS:ObjectName="TabDelimitedACHEmails">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="K:\KINETICO\Common\Ray\SelectoFlatFiles\VendorACHemails.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="25"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ALKY"
+              DTS:DTSID="{DB7EF8DE-6FDA-4821-875A-7B19EA02A28E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PYIN"
+              DTS:DTSID="{4F081EC1-BDBA-4279-B7BB-AC9E57BE4DE5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="40"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MLNM"
+              DTS:DTSID="{793A749D-93B3-466D-828B-8833695FC841}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[TabDelimitedCustomerEmails]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{E2214266-B90F-4462-AC08-8BE0730BCBC0}"
+      DTS:ObjectName="TabDelimitedCustomerEmails">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="K:\KINETICO\Common\Ray\SelectoFlatFiles\CustomerEmailAddresses.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ALKY"
+              DTS:DTSID="{DB113AE8-0F24-4382-90EB-516CC5EAC76C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="40"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NM"
+              DTS:DTSID="{96D499EB-A47B-4985-A2DB-6011A32F8F64}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="40"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="em1"
+              DTS:DTSID="{6CC3C1D9-B7E8-4E89-B60E-097F77DFD9C2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="40"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="em2"
+              DTS:DTSID="{06FBF421-3D18-412B-A74A-ACBF2753C893}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="40"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="em3"
+              DTS:DTSID="{656F79D4-1856-4A0A-8307-63913B24114E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="40"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="em4"
+              DTS:DTSID="{7B80EA60-7438-4DA8-A40A-802219D89BDC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="40"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="em5"
+              DTS:DTSID="{A0B1F5A0-6BB4-4416-AFFE-FF141E09EB4E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="40"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="emx1"
+              DTS:DTSID="{F6D46CFE-DEF7-498E-AA12-15B9E209C710}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="40"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="emx2"
+              DTS:DTSID="{282A2B16-2AFB-4E6E-B95C-4047A710748A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="40"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="emx3"
+              DTS:DTSID="{6F142EFD-ACCB-4D43-A129-4952A268D356}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="40"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="emx4"
+              DTS:DTSID="{887E276F-803B-4F4E-84E7-4A5A6D771BCD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="40"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="emx5"
+              DTS:DTSID="{0FB25703-F21D-4604-9D26-E426D92F2939}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="xmk1"
+              DTS:DTSID="{2A70F2E3-97E6-4CC4-A4A9-DDBC047542B4}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[VendorPOemails]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{1A211D1F-3473-4B5B-8D81-6C0E9FE02E33}"
+      DTS:ObjectName="VendorPOemails">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="K:\KINETICO\Common\Ray\SelectoFlatFiles\VendorPOemails.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Vendor Number"
+              DTS:DTSID="{451DE13F-24DF-4216-91A3-2F0DA91794C6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="40"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Email"
+              DTS:DTSID="{3C541621-A80A-4633-8C08-6B6F8B0439AB}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Customer Emails"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{A568D59F-B699-400D-8C16-66E82B659413}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Customer Emails">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Customer Emails\add to f0111"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{394DCEA3-EFC8-49CE-B70C-A0B1800D48D5}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="add to f0111"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{6755D6CB-7434-4F24-89D1-AB96521C4FE9}"
+              SQLTask:SqlStatementSource="exec dbo.usp_F0111_CustomerEmails" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Customer Emails\Populate flat file"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{F14B8A6B-D0CB-4613-8808-915EE1199A28}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Populate flat file"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Customer Emails\Populate flat file\Data Conversion"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Customer Emails\Populate flat file\Data Conversion.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Customer Emails\Populate flat file\Data Conversion.Inputs[Data Conversion Input].Columns[reason]"
+                          cachedDataType="wstr"
+                          cachedLength="37"
+                          cachedName="reason"
+                          lineageId="Package\Customer Emails\Populate flat file\Derived Column 1.Outputs[Derived Column Output].Columns[reason]" />
+                        <inputColumn
+                          refId="Package\Customer Emails\Populate flat file\Data Conversion.Inputs[Data Conversion Input].Columns[Flat File Source Error Output Column]"
+                          cachedCodepage="1252"
+                          cachedDataType="text"
+                          cachedName="Flat File Source Error Output Column"
+                          lineageId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Customer Emails\Populate flat file\Data Conversion.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Customer Emails\Populate flat file\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Customer Emails\Populate flat file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of reason]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="100"
+                          lineageId="Package\Customer Emails\Populate flat file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of reason]"
+                          name="Copy of reason"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Customer Emails\Populate flat file\Derived Column 1.Outputs[Derived Column Output].Columns[reason]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Customer Emails\Populate flat file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="4000"
+                          lineageId="Package\Customer Emails\Populate flat file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Flat File Source Error Output Column]"
+                          name="Copy of Flat File Source Error Output Column"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Customer Emails\Populate flat file\Data Conversion.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Customer Emails\Populate flat file\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Customer Emails\Populate flat file\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Customer Emails\Populate flat file\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Customer Emails\Populate flat file\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Customer Emails\Populate flat file\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Customer Emails\Populate flat file\Derived Column"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Customer Emails\Populate flat file\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Customer Emails\Populate flat file\Derived Column.Inputs[Derived Column Input].Columns[xmk1]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="xmk1"
+                          lineageId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[xmk1]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Customer Emails\Populate flat file\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Customer Emails\Populate flat file\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Customer Emails\Populate flat file\Derived Column.Outputs[Derived Column Output].Columns[xmk1_fixed]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="40"
+                          lineageId="Package\Customer Emails\Populate flat file\Derived Column.Outputs[Derived Column Output].Columns[xmk1_fixed]"
+                          name="xmk1_fixed"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[LEFT](#{Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[xmk1]},40)</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">LEFT(xmk1,40)</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Customer Emails\Populate flat file\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Customer Emails\Populate flat file\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Customer Emails\Populate flat file\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Customer Emails\Populate flat file\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Customer Emails\Populate flat file\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Customer Emails\Populate flat file\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Customer Emails\Populate flat file\Derived Column 1"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column 1"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Customer Emails\Populate flat file\Derived Column 1.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Customer Emails\Populate flat file\Derived Column 1.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Customer Emails\Populate flat file\Derived Column 1.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Customer Emails\Populate flat file\Derived Column 1.Outputs[Derived Column Output].Columns[reason]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="37"
+                          lineageId="Package\Customer Emails\Populate flat file\Derived Column 1.Outputs[Derived Column Output].Columns[reason]"
+                          name="reason"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">"error reading customer email data row"</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">"error reading customer email data row"</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Customer Emails\Populate flat file\Derived Column 1.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Customer Emails\Populate flat file\Derived Column 1.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Customer Emails\Populate flat file\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Customer Emails\Populate flat file\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Customer Emails\Populate flat file\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Customer Emails\Populate flat file\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Customer Emails\Populate flat file\Flat File Source"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="Flat File Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Customer Emails\Populate flat file\Flat File Source.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[TabDelimitedCustomerEmails]"
+                      connectionManagerRefId="Package.ConnectionManagers[TabDelimitedCustomerEmails]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[ALKY]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ALKY]"
+                          length="20"
+                          lineageId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[ALKY]"
+                          name="ALKY"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[NM]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NM]"
+                          length="40"
+                          lineageId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[NM]"
+                          name="NM"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[em1]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[em1]"
+                          length="40"
+                          lineageId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[em1]"
+                          name="em1"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[em2]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[em2]"
+                          length="40"
+                          lineageId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[em2]"
+                          name="em2"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[em3]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[em3]"
+                          length="40"
+                          lineageId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[em3]"
+                          name="em3"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[em4]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[em4]"
+                          length="40"
+                          lineageId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[em4]"
+                          name="em4"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[em5]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[em5]"
+                          length="40"
+                          lineageId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[em5]"
+                          name="em5"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[emx1]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[emx1]"
+                          length="40"
+                          lineageId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[emx1]"
+                          name="emx1"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[emx2]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[emx2]"
+                          length="40"
+                          lineageId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[emx2]"
+                          name="emx2"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[emx3]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[emx3]"
+                          length="40"
+                          lineageId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[emx3]"
+                          name="emx3"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[emx4]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[emx4]"
+                          length="40"
+                          lineageId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[emx4]"
+                          name="emx4"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[emx5]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[emx5]"
+                          length="40"
+                          lineageId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[emx5]"
+                          name="emx5"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[xmk1]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          externalMetadataColumnId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[xmk1]"
+                          length="100"
+                          lineageId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[xmk1]"
+                          name="xmk1"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ALKY]"
+                          dataType="wstr"
+                          length="20"
+                          name="ALKY" />
+                        <externalMetadataColumn
+                          refId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NM]"
+                          dataType="wstr"
+                          length="40"
+                          name="NM" />
+                        <externalMetadataColumn
+                          refId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[em1]"
+                          dataType="wstr"
+                          length="40"
+                          name="em1" />
+                        <externalMetadataColumn
+                          refId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[em2]"
+                          dataType="wstr"
+                          length="40"
+                          name="em2" />
+                        <externalMetadataColumn
+                          refId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[em3]"
+                          dataType="wstr"
+                          length="40"
+                          name="em3" />
+                        <externalMetadataColumn
+                          refId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[em4]"
+                          dataType="wstr"
+                          length="40"
+                          name="em4" />
+                        <externalMetadataColumn
+                          refId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[em5]"
+                          dataType="wstr"
+                          length="40"
+                          name="em5" />
+                        <externalMetadataColumn
+                          refId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[emx1]"
+                          dataType="wstr"
+                          length="40"
+                          name="emx1" />
+                        <externalMetadataColumn
+                          refId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[emx2]"
+                          dataType="wstr"
+                          length="40"
+                          name="emx2" />
+                        <externalMetadataColumn
+                          refId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[emx3]"
+                          dataType="wstr"
+                          length="40"
+                          name="emx3" />
+                        <externalMetadataColumn
+                          refId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[emx4]"
+                          dataType="wstr"
+                          length="40"
+                          name="emx4" />
+                        <externalMetadataColumn
+                          refId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[emx5]"
+                          dataType="wstr"
+                          length="40"
+                          name="emx5" />
+                        <externalMetadataColumn
+                          refId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[xmk1]"
+                          dataType="wstr"
+                          length="100"
+                          name="xmk1" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Customer Emails\Populate flat file\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[ods_CustomerEmailsFlatFile]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Customer Emails\Populate flat file\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[N01A-DWSQLPD.SelectoJDE]"
+                      connectionManagerRefId="Package.ConnectionManagers[N01A-DWSQLPD.SelectoJDE]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ALKY]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="ALKY"
+                          externalMetadataColumnId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[alky]"
+                          lineageId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[ALKY]" />
+                        <inputColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NM]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="NM"
+                          externalMetadataColumnId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nm]"
+                          lineageId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[NM]" />
+                        <inputColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[em1]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="em1"
+                          externalMetadataColumnId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[em1]"
+                          lineageId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[em1]" />
+                        <inputColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[em2]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="em2"
+                          externalMetadataColumnId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[em2]"
+                          lineageId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[em2]" />
+                        <inputColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[em3]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="em3"
+                          externalMetadataColumnId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[em3]"
+                          lineageId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[em3]" />
+                        <inputColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[em4]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="em4"
+                          externalMetadataColumnId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[em4]"
+                          lineageId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[em4]" />
+                        <inputColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[em5]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="em5"
+                          externalMetadataColumnId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[em5]"
+                          lineageId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[em5]" />
+                        <inputColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[emx1]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="emx1"
+                          externalMetadataColumnId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[emx1]"
+                          lineageId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[emx1]" />
+                        <inputColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[emx2]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="emx2"
+                          externalMetadataColumnId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[emx2]"
+                          lineageId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[emx2]" />
+                        <inputColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[emx3]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="emx3"
+                          externalMetadataColumnId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[emx3]"
+                          lineageId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[emx3]" />
+                        <inputColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[emx4]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="emx4"
+                          externalMetadataColumnId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[emx4]"
+                          lineageId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[emx4]" />
+                        <inputColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[emx5]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="emx5"
+                          externalMetadataColumnId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[emx5]"
+                          lineageId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[emx5]" />
+                        <inputColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[xmk1_fixed]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="xmk1_fixed"
+                          externalMetadataColumnId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[emk1]"
+                          lineageId="Package\Customer Emails\Populate flat file\Derived Column.Outputs[Derived Column Output].Columns[xmk1_fixed]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[alky]"
+                          dataType="wstr"
+                          length="20"
+                          name="alky" />
+                        <externalMetadataColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nm]"
+                          dataType="wstr"
+                          length="40"
+                          name="nm" />
+                        <externalMetadataColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[em1]"
+                          dataType="wstr"
+                          length="40"
+                          name="em1" />
+                        <externalMetadataColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[em2]"
+                          dataType="wstr"
+                          length="40"
+                          name="em2" />
+                        <externalMetadataColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[em3]"
+                          dataType="wstr"
+                          length="40"
+                          name="em3" />
+                        <externalMetadataColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[em4]"
+                          dataType="wstr"
+                          length="40"
+                          name="em4" />
+                        <externalMetadataColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[em5]"
+                          dataType="wstr"
+                          length="40"
+                          name="em5" />
+                        <externalMetadataColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[emx1]"
+                          dataType="wstr"
+                          length="40"
+                          name="emx1" />
+                        <externalMetadataColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[emx2]"
+                          dataType="wstr"
+                          length="40"
+                          name="emx2" />
+                        <externalMetadataColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[emx3]"
+                          dataType="wstr"
+                          length="40"
+                          name="emx3" />
+                        <externalMetadataColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[emx4]"
+                          dataType="wstr"
+                          length="40"
+                          name="emx4" />
+                        <externalMetadataColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[emx5]"
+                          dataType="wstr"
+                          length="40"
+                          name="emx5" />
+                        <externalMetadataColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[emk1]"
+                          dataType="wstr"
+                          length="40"
+                          name="emk1" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Customer Emails\Populate flat file\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Customer Emails\Populate flat file\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Customer Emails\Populate flat file\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Customer Emails\Populate flat file\OLE DB Destination 1"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination 1"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[error_CustomerEmailLoad]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Customer Emails\Populate flat file\OLE DB Destination 1.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[N01A-DWSQLPD.SelectoJDE]"
+                      connectionManagerRefId="Package.ConnectionManagers[N01A-DWSQLPD.SelectoJDE]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Customer Emails\Populate flat file\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ErrorColumn]"
+                          cachedDataType="i4"
+                          cachedName="ErrorColumn"
+                          externalMetadataColumnId="Package\Customer Emails\Populate flat file\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[error_description]"
+                          lineageId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]" />
+                        <inputColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ErrorCode]"
+                          cachedDataType="i4"
+                          cachedName="ErrorCode"
+                          externalMetadataColumnId="Package\Customer Emails\Populate flat file\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[error_code]"
+                          lineageId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]" />
+                        <inputColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Copy of reason]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="Copy of reason"
+                          externalMetadataColumnId="Package\Customer Emails\Populate flat file\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[reason]"
+                          lineageId="Package\Customer Emails\Populate flat file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of reason]" />
+                        <inputColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Copy of Flat File Source Error Output Column]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="4000"
+                          cachedName="Copy of Flat File Source Error Output Column"
+                          externalMetadataColumnId="Package\Customer Emails\Populate flat file\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[data]"
+                          lineageId="Package\Customer Emails\Populate flat file\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Flat File Source Error Output Column]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[error_code]"
+                          codePage="1252"
+                          dataType="str"
+                          length="4000"
+                          name="error_code" />
+                        <externalMetadataColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[error_description]"
+                          codePage="1252"
+                          dataType="str"
+                          length="4000"
+                          name="error_description" />
+                        <externalMetadataColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[data]"
+                          codePage="1252"
+                          dataType="str"
+                          length="4000"
+                          name="data" />
+                        <externalMetadataColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[reason]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="reason" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Customer Emails\Populate flat file\OLE DB Destination 1.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Customer Emails\Populate flat file\OLE DB Destination 1.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Customer Emails\Populate flat file\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Customer Emails\Populate flat file\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Customer Emails\Populate flat file\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Customer Emails\Populate flat file.Paths[Data Conversion Output]"
+                  endId="Package\Customer Emails\Populate flat file\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Customer Emails\Populate flat file\Data Conversion.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Customer Emails\Populate flat file.Paths[Derived Column Output]"
+                  endId="Package\Customer Emails\Populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\Customer Emails\Populate flat file\Derived Column.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Customer Emails\Populate flat file.Paths[Derived Column Output1]"
+                  endId="Package\Customer Emails\Populate flat file\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Derived Column Output"
+                  startId="Package\Customer Emails\Populate flat file\Derived Column 1.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Customer Emails\Populate flat file.Paths[Flat File Source Error Output]"
+                  endId="Package\Customer Emails\Populate flat file\Derived Column 1.Inputs[Derived Column Input]"
+                  name="Flat File Source Error Output"
+                  startId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Error Output]" />
+                <path
+                  refId="Package\Customer Emails\Populate flat file.Paths[Flat File Source Output]"
+                  endId="Package\Customer Emails\Populate flat file\Derived Column.Inputs[Derived Column Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Customer Emails\Populate flat file\Flat File Source.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Customer Emails\truncate flat file"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{984DDADE-9822-4048-B172-53E8027F9D56}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="truncate flat file"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{6755D6CB-7434-4F24-89D1-AB96521C4FE9}"
+              SQLTask:SqlStatementSource="truncate table dbo.ods_CustomerEmailsFlatFile&#xA;truncate table [dbo].[error_CustomerEmailLoad]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Customer Emails.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{8455AF79-7E2C-43C5-9B72-E37B5E7A06E3}"
+          DTS:From="Package\Customer Emails\truncate flat file"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Customer Emails\Populate flat file" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Customer Emails.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{9FD292D0-CA0C-451B-9D43-64105F25F5A3}"
+          DTS:From="Package\Customer Emails\Populate flat file"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Customer Emails\add to f0111" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Vendor ACH Emails"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{3D6B6C45-C9AC-4E3D-BCE4-99867BD80916}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Vendor ACH Emails">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Vendor ACH Emails\add to f0111"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{3466B321-DBC6-4BFB-9632-5DF6A661CAEF}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="add to f0111"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{6755D6CB-7434-4F24-89D1-AB96521C4FE9}"
+              SQLTask:SqlStatementSource="exec dbo.usp_F0111_VendorACHemails" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Vendor ACH Emails\populate flat file"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{07E7BFD6-9ACC-4B0C-AAE0-4BA1FC8BB37B}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="populate flat file"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Vendor ACH Emails\populate flat file\Flat File Source"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="Flat File Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Vendor ACH Emails\populate flat file\Flat File Source.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[TabDelimitedACHEmails]"
+                      connectionManagerRefId="Package.ConnectionManagers[TabDelimitedACHEmails]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Vendor ACH Emails\populate flat file\Flat File Source.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Vendor ACH Emails\populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[ALKY]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Vendor ACH Emails\populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ALKY]"
+                          length="25"
+                          lineageId="Package\Vendor ACH Emails\populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[ALKY]"
+                          name="ALKY"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Vendor ACH Emails\populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[PYIN]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Vendor ACH Emails\populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PYIN]"
+                          length="1"
+                          lineageId="Package\Vendor ACH Emails\populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[PYIN]"
+                          name="PYIN"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Vendor ACH Emails\populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[MLNM]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Vendor ACH Emails\populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MLNM]"
+                          length="40"
+                          lineageId="Package\Vendor ACH Emails\populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[MLNM]"
+                          name="MLNM"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Vendor ACH Emails\populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ALKY]"
+                          dataType="wstr"
+                          length="25"
+                          name="ALKY" />
+                        <externalMetadataColumn
+                          refId="Package\Vendor ACH Emails\populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PYIN]"
+                          dataType="wstr"
+                          length="1"
+                          name="PYIN" />
+                        <externalMetadataColumn
+                          refId="Package\Vendor ACH Emails\populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MLNM]"
+                          dataType="wstr"
+                          length="40"
+                          name="MLNM" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Vendor ACH Emails\populate flat file\Flat File Source.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Vendor ACH Emails\populate flat file\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Vendor ACH Emails\populate flat file\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Vendor ACH Emails\populate flat file\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Vendor ACH Emails\populate flat file\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Vendor ACH Emails\populate flat file\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Vendor ACH Emails\populate flat file\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Vendor ACH Emails\populate flat file\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[ods_VendorACHemails]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Vendor ACH Emails\populate flat file\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[N01A-DWSQLPD.SelectoJDE]"
+                      connectionManagerRefId="Package.ConnectionManagers[N01A-DWSQLPD.SelectoJDE]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Vendor ACH Emails\populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Vendor ACH Emails\populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ALKY]"
+                          cachedDataType="wstr"
+                          cachedLength="25"
+                          cachedName="ALKY"
+                          externalMetadataColumnId="Package\Vendor ACH Emails\populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ALKY]"
+                          lineageId="Package\Vendor ACH Emails\populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[ALKY]" />
+                        <inputColumn
+                          refId="Package\Vendor ACH Emails\populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MLNM]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="MLNM"
+                          externalMetadataColumnId="Package\Vendor ACH Emails\populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MLNM]"
+                          lineageId="Package\Vendor ACH Emails\populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[MLNM]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Vendor ACH Emails\populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ALKY]"
+                          dataType="wstr"
+                          length="25"
+                          name="ALKY" />
+                        <externalMetadataColumn
+                          refId="Package\Vendor ACH Emails\populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MLNM]"
+                          dataType="wstr"
+                          length="40"
+                          name="MLNM" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Vendor ACH Emails\populate flat file\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Vendor ACH Emails\populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Vendor ACH Emails\populate flat file\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Vendor ACH Emails\populate flat file\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Vendor ACH Emails\populate flat file\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Vendor ACH Emails\populate flat file\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Vendor ACH Emails\populate flat file.Paths[Flat File Source Output]"
+                  endId="Package\Vendor ACH Emails\populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Vendor ACH Emails\populate flat file\Flat File Source.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Vendor ACH Emails\truncate flat file"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{5AA9A28F-033B-4463-AC72-A12C040B0323}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="truncate flat file"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{6755D6CB-7434-4F24-89D1-AB96521C4FE9}"
+              SQLTask:SqlStatementSource="truncate table dbo.ods_VendorACHemails" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Vendor ACH Emails.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{FFAE391B-C66A-47C7-8731-4C7B2B319227}"
+          DTS:From="Package\Vendor ACH Emails\truncate flat file"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Vendor ACH Emails\populate flat file" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Vendor ACH Emails.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{6B006B19-4952-4021-A3D8-7DE6083412AB}"
+          DTS:From="Package\Vendor ACH Emails\populate flat file"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Vendor ACH Emails\add to f0111" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Vendor PO Emails"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{74EEAEE8-681E-4F86-B744-338999352A02}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Vendor PO Emails">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Vendor PO Emails\add to f0111"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{9DCD82BB-4425-4E83-8B29-5C39AAA1E739}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="add to f0111"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{6755D6CB-7434-4F24-89D1-AB96521C4FE9}"
+              SQLTask:SqlStatementSource="exec dbo.usp_F0111_VendorPOemails" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Vendor PO Emails\populate flat file"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{AB99364E-784B-4479-8CF1-E5B926FABDBE}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="populate flat file"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Vendor PO Emails\populate flat file\Flat File Source"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="Flat File Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Vendor PO Emails\populate flat file\Flat File Source.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[VendorPOemails]"
+                      connectionManagerRefId="Package.ConnectionManagers[VendorPOemails]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Vendor PO Emails\populate flat file\Flat File Source.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Vendor PO Emails\populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[Vendor Number]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Vendor PO Emails\populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vendor Number]"
+                          length="20"
+                          lineageId="Package\Vendor PO Emails\populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[Vendor Number]"
+                          name="Vendor Number"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Vendor PO Emails\populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[Email]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Vendor PO Emails\populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Email]"
+                          length="40"
+                          lineageId="Package\Vendor PO Emails\populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[Email]"
+                          name="Email"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Vendor PO Emails\populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vendor Number]"
+                          dataType="wstr"
+                          length="20"
+                          name="Vendor Number" />
+                        <externalMetadataColumn
+                          refId="Package\Vendor PO Emails\populate flat file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Email]"
+                          dataType="wstr"
+                          length="40"
+                          name="Email" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Vendor PO Emails\populate flat file\Flat File Source.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Vendor PO Emails\populate flat file\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Vendor PO Emails\populate flat file\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Vendor PO Emails\populate flat file\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Vendor PO Emails\populate flat file\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Vendor PO Emails\populate flat file\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Vendor PO Emails\populate flat file\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Vendor PO Emails\populate flat file\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[ods_VendorPOemails]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Vendor PO Emails\populate flat file\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[N01A-DWSQLPD.SelectoJDE]"
+                      connectionManagerRefId="Package.ConnectionManagers[N01A-DWSQLPD.SelectoJDE]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Vendor PO Emails\populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Vendor PO Emails\populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Email]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="Email"
+                          externalMetadataColumnId="Package\Vendor PO Emails\populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[email]"
+                          lineageId="Package\Vendor PO Emails\populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[Email]" />
+                        <inputColumn
+                          refId="Package\Vendor PO Emails\populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vendor Number]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="Vendor Number"
+                          externalMetadataColumnId="Package\Vendor PO Emails\populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[alky]"
+                          lineageId="Package\Vendor PO Emails\populate flat file\Flat File Source.Outputs[Flat File Source Output].Columns[Vendor Number]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Vendor PO Emails\populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[alky]"
+                          dataType="wstr"
+                          length="20"
+                          name="alky" />
+                        <externalMetadataColumn
+                          refId="Package\Vendor PO Emails\populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[email]"
+                          dataType="wstr"
+                          length="40"
+                          name="email" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Vendor PO Emails\populate flat file\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Vendor PO Emails\populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Vendor PO Emails\populate flat file\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Vendor PO Emails\populate flat file\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Vendor PO Emails\populate flat file\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Vendor PO Emails\populate flat file\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Vendor PO Emails\populate flat file.Paths[Flat File Source Output]"
+                  endId="Package\Vendor PO Emails\populate flat file\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Vendor PO Emails\populate flat file\Flat File Source.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Vendor PO Emails\truncate flat file"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{88E70036-1CA3-4501-B2E4-9937CAAD3A95}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="truncate flat file"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{6755D6CB-7434-4F24-89D1-AB96521C4FE9}"
+              SQLTask:SqlStatementSource="truncate table dbo.ods_VendorPOemails" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Vendor PO Emails.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{846A42C7-A8F4-468A-8540-C0FED851FEBC}"
+          DTS:From="Package\Vendor PO Emails\truncate flat file"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Vendor PO Emails\populate flat file" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Vendor PO Emails.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{35CF8ECF-B99A-4256-A08C-1B0B14DB25EC}"
+          DTS:From="Package\Vendor PO Emails\populate flat file"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Vendor PO Emails\add to f0111" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{20D90614-221B-4814-AD5C-F6CAE12A7439}"
+      DTS:From="Package\Vendor ACH Emails"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Vendor PO Emails" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{340D2447-D52B-4BE3-9A1C-541E7582F6E8}"
+      DTS:From="Package\Vendor PO Emails"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Customer Emails" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Customer Emails\add to f0111"
+          TopLeft="23,167" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Customer Emails\Populate flat file"
+          TopLeft="20,92" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Customer Emails\truncate flat file"
+          TopLeft="19,19" />
+        <EdgeLayout
+          Id="Package\Customer Emails.PrecedenceConstraints[Constraint]"
+          TopLeft="96.75,61">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31"
+              Start="0,0"
+              End="0,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Customer Emails.PrecedenceConstraints[Constraint 1]"
+          TopLeft="95,134">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="205,229"
+          Size="205,272"
+          Id="Package\Customer Emails"
+          TopLeft="748,116" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Vendor ACH Emails\add to f0111"
+          TopLeft="12,154" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Vendor ACH Emails\populate flat file"
+          TopLeft="10,79" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Vendor ACH Emails\truncate flat file"
+          TopLeft="9,11" />
+        <EdgeLayout
+          Id="Package\Vendor ACH Emails.PrecedenceConstraints[Constraint]"
+          TopLeft="86.75,53">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26"
+              Start="0,0"
+              End="0,18.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Vendor ACH Emails.PrecedenceConstraints[Constraint 1]"
+          TopLeft="84.5,121">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="204,222"
+          Size="204,265"
+          Id="Package\Vendor ACH Emails"
+          TopLeft="89,119" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Vendor PO Emails\add to f0111"
+          TopLeft="23,161" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Vendor PO Emails\populate flat file"
+          TopLeft="20,85" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Vendor PO Emails\truncate flat file"
+          TopLeft="19,16" />
+        <EdgeLayout
+          Id="Package\Vendor PO Emails.PrecedenceConstraints[Constraint]"
+          TopLeft="96.75,58">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27"
+              Start="0,0"
+              End="0,19.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Vendor PO Emails.PrecedenceConstraints[Constraint 1]"
+          TopLeft="95,127">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="205,244"
+          Size="205,287"
+          Id="Package\Vendor PO Emails"
+          TopLeft="405,114" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="293,254.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="112,0"
+              Start="0,0"
+              End="104.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="104.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="610,254.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="138,0"
+              Start="0,0"
+              End="130.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="130.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Customer Emails\Populate flat file">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Customer Emails\Populate flat file\Derived Column"
+          TopLeft="356,184" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Customer Emails\Populate flat file\OLE DB Destination"
+          TopLeft="354,277" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Customer Emails\Populate flat file\Derived Column 1"
+          TopLeft="671,89" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Customer Emails\Populate flat file\OLE DB Destination 1"
+          TopLeft="971,204" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Customer Emails\Populate flat file\Data Conversion"
+          TopLeft="944,105" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Customer Emails\Populate flat file\Flat File Source"
+          TopLeft="364,86" />
+        <EdgeLayout
+          Id="Package\Customer Emails\Populate flat file.Paths[Flat File Source Output]"
+          TopLeft="436.25,128">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56"
+              Start="0,0"
+              End="0,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Customer Emails\Populate flat file.Paths[Flat File Source Error Output]"
+          TopLeft="515,108.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="156,0"
+              Start="0,0"
+              End="148.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="148.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="10.62361328125,5,127.2527734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Customer Emails\Populate flat file.Paths[Derived Column Output1]"
+          TopLeft="834,110">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="110,16"
+              Start="0,0"
+              End="102.5,16">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="51,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="51,0"
+                    Point2="55,0"
+                    Point3="55,4" />
+                  <mssgle:LineSegment
+                    End="55,12" />
+                  <mssgle:CubicBezierSegment
+                    Point1="55,12"
+                    Point2="55,16"
+                    Point3="59,16" />
+                  <mssgle:LineSegment
+                    End="102.5,16" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Customer Emails\Populate flat file.Paths[Derived Column Output]"
+          TopLeft="436.25,226">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51"
+              Start="0,0"
+              End="0,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Customer Emails\Populate flat file.Paths[Data Conversion Output]"
+          TopLeft="1022,147">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="39,57"
+              Start="0,0"
+              End="39,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.5"
+                    Point2="0,28.5"
+                    Point3="4,28.5" />
+                  <mssgle:LineSegment
+                    End="35,28.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="35,28.5"
+                    Point2="39,28.5"
+                    Point3="39,32.5" />
+                  <mssgle:LineSegment
+                    End="39,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Customer Emails\Populate flat file\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Customer Emails\Populate flat file\OLE DB Destination 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Vendor ACH Emails\populate flat file">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Vendor ACH Emails\populate flat file\OLE DB Destination"
+          TopLeft="230,178" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Vendor ACH Emails\populate flat file\Flat File Source"
+          TopLeft="242,64" />
+        <EdgeLayout
+          Id="Package\Vendor ACH Emails\populate flat file.Paths[Flat File Source Output]"
+          TopLeft="316.5,106">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,72"
+              Start="0,0"
+              End="0,64.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,64.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Vendor ACH Emails\populate flat file\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Vendor PO Emails\populate flat file">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Vendor PO Emails\populate flat file\OLE DB Destination"
+          TopLeft="388,193" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Vendor PO Emails\populate flat file\Flat File Source"
+          TopLeft="392,73" />
+        <EdgeLayout
+          Id="Package\Vendor PO Emails\populate flat file.Paths[Flat File Source Output]"
+          TopLeft="470.5,115">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,78"
+              Start="0,0"
+              End="0,70.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,70.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Vendor PO Emails\populate flat file\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
