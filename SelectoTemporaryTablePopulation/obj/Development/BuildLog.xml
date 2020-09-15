@@ -2,33 +2,33 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>SelectoTemporaryTablePopulation</Name>
-    <LastWriteTime>2020-09-11T16:20:07.9280734Z</LastWriteTime>
+    <LastWriteTime>2020-09-12T18:57:12.5434018Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
-      <Name>ItemDataCreation.dtsx</Name>
-      <LastWriteTime>2020-09-11T16:43:28.1092319Z</LastWriteTime>
+      <Name>0__RUN_BEFORE_POPULATING_DV.dtsx</Name>
+      <LastWriteTime>2020-09-12T18:46:07.7902995Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>VendorAndCustomerData.dtsx</Name>
-      <LastWriteTime>2020-08-27T14:36:51.4011934Z</LastWriteTime>
+      <Name>1_VendorAndCustomerData.dtsx</Name>
+      <LastWriteTime>2020-09-15T16:01:30.9487814Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>PostItemVendorCustomerLoad.dtsx</Name>
-      <LastWriteTime>2020-09-09T14:48:56.9202683Z</LastWriteTime>
+      <Name>2_ItemDataCreation.dtsx</Name>
+      <LastWriteTime>2020-09-12T18:47:00.3385271Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>__RUN_BEFORE_POPULATING_DV.dtsx</Name>
-      <LastWriteTime>2020-08-27T14:36:51.4126889Z</LastWriteTime>
+      <Name>3_PostItemVendorCustomerLoad.dtsx</Name>
+      <LastWriteTime>2020-09-12T18:47:19.0941717Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>zPopulateEmailAddresses.dtsx</Name>
-      <LastWriteTime>2020-09-11T15:46:29.262208Z</LastWriteTime>
+      <Name>4_PopulateEmailAddresses.dtsx</Name>
+      <LastWriteTime>2020-09-12T18:47:36.9770696Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

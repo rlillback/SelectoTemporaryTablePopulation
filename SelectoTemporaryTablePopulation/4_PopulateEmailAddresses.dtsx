@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="N01A-DWSQLPY"
   DTS:CreatorName="KINETICONET\rlillbac"
-  DTS:DTSID="{D57ECF82-71B7-4781-94FF-61AFA3CB484E}"
+  DTS:DTSID="{61D98E17-DB34-4F7A-8484-76A15CDAC6BF}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.1301.433"
   DTS:LocaleID="1033"
-  DTS:ObjectName="Package1"
+  DTS:ObjectName="4_PopulateEmailAddresses"
   DTS:PackageType="5"
-  DTS:VersionBuild="15"
-  DTS:VersionGUID="{17BBB9D4-6A94-4686-9A87-2CB062E4E98D}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{F4462D7D-588A-4275-94E7-419F6401B4AC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>

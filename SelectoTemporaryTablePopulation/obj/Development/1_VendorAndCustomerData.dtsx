@@ -1,18 +1,18 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="2/10/2020 1:34:14 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="N01A-DWSQLPD"
   DTS:CreatorName="KINETICONET\rlillbac"
-  DTS:DTSID="{E5B34C0A-DC75-4137-9244-3B217695A484}"
+  DTS:DTSID="{EFC17D98-5302-4041-AEEF-A65AEC514216}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.1301.433"
   DTS:LocaleID="1033"
-  DTS:ObjectName="Package1"
+  DTS:ObjectName="1_VendorAndCustomerData"
   DTS:PackageType="5"
-  DTS:VersionBuild="60"
-  DTS:VersionGUID="{A2AA05AB-92A3-40FA-9B1C-EF1DAC7A6E6A}">
+  DTS:VersionBuild="62"
+  DTS:VersionGUID="{8F654442-44E7-44D6-AA11-BA91F5922472}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -408,6 +408,7 @@
       DTS:refId="Package\Populate atmp Customer"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{2c99bfe9-c289-4656-9084-6aebc626a8e2}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -859,6 +860,7 @@
       DTS:refId="Package\Populate atmp Remits"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{64D7790B-1091-4A00-9E26-066BAAD4D08A}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -985,6 +987,7 @@
       DTS:refId="Package\Populate atmp ShipTo"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{9DDD0E8A-9038-4670-923A-5AFBFB1ABBC6}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -1135,6 +1138,7 @@
       DTS:refId="Package\Populate atmp Vendor Files"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{0310218E-248B-437D-9E0D-436D9B40B8DE}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -1319,6 +1323,7 @@
           DTS:refId="Package\Populate EFT Bank Codes\Load EFT FlatFile"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
+          DTS:Disabled="True"
           DTS:DTSID="{886999E3-63DA-4953-A9E7-43E1F75B5DA5}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -1664,6 +1669,7 @@
           DTS:refId="Package\Populate EFT Bank Codes\Pop F0030"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
+          DTS:Disabled="True"
           DTS:DTSID="{134F05A9-4333-454E-A4D4-4F0402C182A7}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
@@ -1677,9 +1683,26 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
+          DTS:refId="Package\Populate EFT Bank Codes\Pop F0030 with dummys"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{F254C733-83A8-43E7-9940-AEC0A9C800D1}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Pop F0030 with dummys"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{DC9CFE48-2945-423B-A186-7BD29B34A0DC}"
+              SQLTask:SqlStatementSource="exec dbo.usp_F0030_VendorWire" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\Populate EFT Bank Codes\Trunc EFT FlatFIle"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
+          DTS:Disabled="True"
           DTS:DTSID="{B5F0CC3E-CFE9-472A-A97A-499A3783F149}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
@@ -1710,12 +1733,21 @@
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
           DTS:To="Package\Populate EFT Bank Codes\Pop F0030" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Populate EFT Bank Codes.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{54C4D7D8-50AF-4597-94CE-E7016DD9AC82}"
+          DTS:From="Package\Populate EFT Bank Codes\Pop F0030"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Populate EFT Bank Codes\Pop F0030 with dummys" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Populate Vendor Flat File with csv Data"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{4706DA74-D28B-4E7A-B6BA-D2693765D244}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -3722,6 +3754,7 @@
       DTS:refId="Package\Update Tax Area Codes"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{C0C17B0B-B4F6-4913-B2E3-E17DD9DB46A0}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -4918,11 +4951,37 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="195,42"
+          Id="Package\Populate EFT Bank Codes\Pop F0030 with dummys"
+          TopLeft="5,225" />
+        <EdgeLayout
+          Id="Package\Populate EFT Bank Codes.PrecedenceConstraints[Constraint 2]"
+          TopLeft="102.5,195">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="231,214"
-          Size="231,257"
+          PanelSize="231,321"
+          Size="231,364"
           Id="Package\Populate EFT Bank Codes"
           TopLeft="711,718" />
         <NodeLayout
@@ -5267,30 +5326,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="942,846.5">
+          TopLeft="942,900">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="29.7619047619053,-230.690476190476"
+              EndConnector="29.761904761905,-284.190476190476"
               Start="0,0"
-              End="22.2619047619053,-230.690476190476">
+              End="22.261904761905,-284.190476190476">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="10.8809523809526,0" />
+                    End="10.8809523809525,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="10.8809523809526,0"
-                    Point2="14.8809523809526,0"
-                    Point3="14.8809523809526,-4" />
+                    Point1="10.8809523809525,0"
+                    Point2="14.8809523809525,0"
+                    Point3="14.8809523809525,-4" />
                   <mssgle:LineSegment
-                    End="14.8809523809526,-226.690476190476" />
+                    End="14.8809523809525,-280.190476190476" />
                   <mssgle:CubicBezierSegment
-                    Point1="14.8809523809526,-226.690476190476"
-                    Point2="14.8809523809526,-230.690476190476"
-                    Point3="18.8809523809526,-230.690476190476" />
+                    Point1="14.8809523809525,-280.190476190476"
+                    Point2="14.8809523809525,-284.190476190476"
+                    Point3="18.8809523809525,-284.190476190476" />
                   <mssgle:LineSegment
-                    End="22.2619047619053,-230.690476190476" />
+                    End="22.261904761905,-284.190476190476" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
