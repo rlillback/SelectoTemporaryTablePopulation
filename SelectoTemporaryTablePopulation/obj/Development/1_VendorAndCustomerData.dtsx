@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="1_VendorAndCustomerData"
   DTS:PackageType="5"
-  DTS:VersionBuild="62"
-  DTS:VersionGUID="{8F654442-44E7-44D6-AA11-BA91F5922472}">
+  DTS:VersionBuild="64"
+  DTS:VersionGUID="{9FCEE801-6787-4A96-91A2-1E86CF040ABC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -408,7 +408,6 @@
       DTS:refId="Package\Populate atmp Customer"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{2c99bfe9-c289-4656-9084-6aebc626a8e2}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -860,7 +859,6 @@
       DTS:refId="Package\Populate atmp Remits"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{64D7790B-1091-4A00-9E26-066BAAD4D08A}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -987,7 +985,6 @@
       DTS:refId="Package\Populate atmp ShipTo"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{9DDD0E8A-9038-4670-923A-5AFBFB1ABBC6}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -1138,7 +1135,6 @@
       DTS:refId="Package\Populate atmp Vendor Files"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{0310218E-248B-437D-9E0D-436D9B40B8DE}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -1323,7 +1319,6 @@
           DTS:refId="Package\Populate EFT Bank Codes\Load EFT FlatFile"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:Disabled="True"
           DTS:DTSID="{886999E3-63DA-4953-A9E7-43E1F75B5DA5}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -1669,7 +1664,6 @@
           DTS:refId="Package\Populate EFT Bank Codes\Pop F0030"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
           DTS:DTSID="{134F05A9-4333-454E-A4D4-4F0402C182A7}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
@@ -1702,7 +1696,6 @@
           DTS:refId="Package\Populate EFT Bank Codes\Trunc EFT FlatFIle"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
           DTS:DTSID="{B5F0CC3E-CFE9-472A-A97A-499A3783F149}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
@@ -1747,7 +1740,6 @@
       DTS:refId="Package\Populate Vendor Flat File with csv Data"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{4706DA74-D28B-4E7A-B6BA-D2693765D244}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -3754,7 +3746,6 @@
       DTS:refId="Package\Update Tax Area Codes"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{C0C17B0B-B4F6-4913-B2E3-E17DD9DB46A0}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -4538,7 +4529,7 @@
           PanelSize="215,355"
           Size="215,398"
           Id="Package\Populate atmp Remits"
-          TopLeft="711.428571428571,295.714285714286" />
+          TopLeft="724.285714285714,294.285714285715" />
         <NodeLayout
           Size="108,42"
           Id="Package\Populate atmp ShipTo\F0111"
@@ -4894,7 +4885,7 @@
           PanelSize="299,485"
           Size="299,528"
           Id="Package\Populate atmp Vendor Files"
-          TopLeft="374.928571428571,361.714285714286" />
+          TopLeft="387.785714285714,360.285714285715" />
         <NodeLayout
           Size="159,42"
           Id="Package\Populate EFT Bank Codes\Load EFT FlatFile"
@@ -5098,7 +5089,7 @@
           PanelSize="293,390"
           Size="293,433"
           Id="Package\Populate Vendor Flat File with csv Data"
-          TopLeft="39.4285714285714,425.714285714286" />
+          TopLeft="52.2857142857143,424.285714285715" />
         <NodeLayout
           Size="158,42"
           Id="Package\Update Tax Area Codes\Fix leading zeros"
@@ -5202,7 +5193,7 @@
           TopLeft="1536.66666666667,480" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="332.428571428571,642.214285714286">
+          TopLeft="345.285714285714,640.785714285715">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5236,7 +5227,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="673.928571428571,625.714285714286">
+          TopLeft="686.785714285714,624.285714285715">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5270,18 +5261,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="822.714285714286,693.714285714286">
+          TopLeft="829.142857142857,692.285714285715">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,24.285714285714"
+              EndConnector="0,25.7142857142854"
               Start="0,0"
-              End="0,16.785714285714">
+              End="0,18.2142857142854">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.785714285714" />
+                    End="0,18.2142857142854" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5605,7 +5596,7 @@
     design-time-name="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="174,42"
           Id="Package\Populate Vendor Flat File with csv Data\Populate Inactive Vendors\get inactive vendors"
@@ -5637,9 +5628,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5673,9 +5662,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5874,13 +5861,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="151,42"
-          Id="Package\Update Tax Area Codes\pull flat file tax codes\Flat File Source"
-          TopLeft="500,122" />
-        <NodeLayout
           Size="171,42"
           Id="Package\Update Tax Area Codes\pull flat file tax codes\OLE DB Destination"
           TopLeft="489,246" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Update Tax Area Codes\pull flat file tax codes\Flat File Source"
+          TopLeft="500,122" />
         <EdgeLayout
           Id="Package\Update Tax Area Codes\pull flat file tax codes.Paths[Flat File Source Output]"
           TopLeft="575,164">
